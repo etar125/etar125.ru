@@ -1,0 +1,73 @@
+#!/bin/env tclsh
+# from e1sg.tcl
+
+foreach f [glob -nocomplain -directory $dir -type f *.md] {
+    if {[lsearch -exact $ignore_convert $f] != -1} { continue }
+    if {[catch {exec 1md -class blog $f > [file rootname $f].html} error_msg]} {
+        puts "error while converting ${f}: ${error_msg}"
+    }
+    file delete $f
+}
+
+proc remove_all_links {content} {
+    # Удаляем все теги <a> с любыми атрибутами, оставляя только содержимое
+    while {[regsub {<a[^>]*>(.*?)</a>} $content {\1} content]} {
+        # Продолжаем пока есть теги <a>
+    }
+    return [string trim $content]
+}
+
+proc clean_h1_and_show {html} {
+    if {[regexp {<h1[^>]*>(.*?)</h1>} $html full_match h1_content]} {
+        # Удаляем все ссылки из содержимого
+        set clean_content [remove_all_links $h1_content]
+        
+        # Создаем чистый h1
+        set new_h1 "<h1>$clean_content</h1>"
+        set result_html [string replace $html [string first $full_match $html] \
+                [expr {[string first $full_match $html] + [string length $full_match] - 1}] \
+                $new_h1]
+        return [list $result_html $clean_content]
+    }
+    return [list $html ""]
+}
+
+proc clean_h3_and_add_class {html} {
+    if {[regexp {<h3[^>]*>(.*?)</h3>} $html full_match h3_content]} {
+        # Удаляем все ссылки из содержимого
+        set clean_content [remove_all_links $h3_content]
+        
+        # Создаем чистый h3 с классом
+        set new_h3 "<h3 class=\"blog-date\">$clean_content</h3>"
+        return [string replace $html [string first $full_match $html] \
+                [expr {[string first $full_match $html] + [string length $full_match] - 1}] \
+                $new_h3]
+    }
+    return $html
+}
+
+set articles "# Мой блог\n\n"
+foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.html]] {
+    if {[lsearch -exact $ignore_convert $f] != -1} { continue }
+    set fd [open $f r]
+    set html [read $fd]
+    close $fd
+    set first [clean_h1_and_show $html]
+    set second [clean_h3_and_add_class [lindex $first 0]]
+    set name [file tail $f]
+    append articles "\[[lindex $first 1]\]($name) [lindex [split $name \".\"] 0]  \n"
+    set fd [open [file join $dir "$name"] w]
+    puts -nonewline $fd $second
+    close $fd
+}
+
+set fname [file join $dir "index.md"]
+
+set fd [open $fname w]
+puts $fd $articles
+close $fd
+
+if {[catch {exec 1md $fname > [file rootname $fname].html} error_msg]} {
+    puts "error while converting index.md: ${error_msg}"
+}
+file delete $fname

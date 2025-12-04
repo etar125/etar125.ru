@@ -1,0 +1,15 @@
+name:   e1sg
+short:  e1sg
+desc:   Генератор статических сайтов
+ver:    0.25.11_07
+status: active
+repo:   https://github.com/etar125/e1sg
+about:  e1sg.html
+
+name:   vpc125
+short:  vpc125
+desc:   Подобие виртуальной машины
+ver:    -
+status: frozen
+repo:   https://github.com/etar125/vpc125
+about:  vpc125.html
