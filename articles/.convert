@@ -1,0 +1,103 @@
+#!/bin/env tclsh
+# from e1sg.tcl
+
+foreach f [glob -nocomplain -directory $dir -type f *.md] {
+    if {[lsearch -exact $ignore_convert $f] != -1} { continue }
+    if {[catch {exec 1md -class blog $f > [file rootname $f].html} error_msg]} {
+        puts "error while converting ${f}: ${error_msg}"
+    }
+    file delete $f
+}
+
+
+proc remove_all_links {content} {
+    # Удаляем все теги <a> с любыми атрибутами, оставляя только содержимое
+    while {[regsub {<a[^>]*>(.*?)</a>} $content {\1} content]} {
+        # Продолжаем пока есть теги <a>
+    }
+    return [string trim $content]
+}
+
+proc clean_h1_and_show {html} {
+    if {[regexp {<h1[^>]*>(.*?)</h1>} $html full_match h1_content]} {
+        # Удаляем все ссылки из содержимого
+        set clean_content [remove_all_links $h1_content]
+        
+        # Создаем чистый h1
+        set new_h1 "<h1>$clean_content</h1>"
+        set result_html [string replace $html [string first $full_match $html] \
+                [expr {[string first $full_match $html] + [string length $full_match] - 1}] \
+                $new_h1]
+        return [list $result_html $clean_content]
+    }
+    return [list $html ""]
+}
+
+proc clean_h3_and_add_class {html} {
+    if {[regexp {<h3[^>]*>(.*?)</h3>} $html full_match h3_content]} {
+        # Удаляем все ссылки из содержимого
+        set clean_content [remove_all_links $h3_content]
+        
+        # Создаем чистый h3 с классом
+        set new_h3 "<h3 class=\"blog-date\">$clean_content</h3>"
+        return [string replace $html [string first $full_match $html] \
+                [expr {[string first $full_match $html] + [string length $full_match] - 1}] \
+                $new_h3]
+    }
+    return $html
+}
+
+proc compare_filenames {a b} {
+    # Извлекаем все компоненты имени
+    regexp {^([^_]+)_(\d{4}-\d{2}-\d{2})_(\d+)\.html$} $a -> prefix_a date_a num_a
+    regexp {^([^_]+)_(\d{4}-\d{2}-\d{2})_(\d+)\.html$} $b -> prefix_b date_b num_b
+    
+    # Сначала сравниваем даты
+    set date_cmp [string compare $date_b $date_a]
+    if {$date_cmp != 0} { return $date_cmp }
+    
+    # Если даты равны, сравниваем префиксы
+    set prefix_cmp [string compare $prefix_b $prefix_a]
+    if {$prefix_cmp != 0} { return $prefix_cmp }
+    
+    # Если префиксы равны, сравниваем номера
+    return [expr {$num_b - $num_a}]
+}
+
+set articles "# Мои статьи\n\n"
+foreach f [lsort -command {apply {{a b} {
+    # Берем только имена файлов (без пути)
+    set name_a [file tail $a]
+    set name_b [file tail $b]
+    
+    # Извлекаем даты
+    regexp {(\d{4}-\d{2}-\d{2}_\d{1})} $name_a -> date_a
+    regexp {(\d{4}-\d{2}-\d{2}_\d{1})} $name_b -> date_b
+    
+    # Сравниваем даты
+    string compare $date_b $date_a
+}}} [glob -nocomplain -directory $dir -type f *.html]] {
+    if {[lsearch -exact $ignore_convert $f] != -1} { continue }
+    set fd [open $f r]
+    set html [read $fd]
+    close $fd
+    set first [clean_h1_and_show $html]
+    set second [clean_h3_and_add_class [lindex $first 0]]
+    set names [split [file tail $f] "_"]
+    append articles "\[[lindex $first 1]\]([lindex $names 0].html) [lindex $names 1]  \n"
+    set fd [open [file join $dir "[lindex $names 0].html"] w]
+    puts -nonewline $fd $second
+    close $fd
+    file delete $f
+}
+
+set fname [file join $dir "index.md"]
+
+set fd [open $fname w]
+puts $fd $articles
+close $fd
+
+if {[catch {exec 1md $fname > [file rootname $fname].html} error_msg]} {
+    puts "error while converting index.md: ${error_msg}"
+}
+file delete $fname
