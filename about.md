@@ -29,4 +29,4 @@ Lua, VB.NET, VBScript, Pascal, Windows Batch.
 **WM**: JWM  
 Обоина WinXP Autumn.
 
-![Рабочий стол](/desktop.png)
+![Рабочий стол](https://media.etar125.ru/desktop.png)
