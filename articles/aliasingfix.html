@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>etar125.ru:articles</title>
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+</head>
+<body>
+<div id="logo">
+<span id="name">etar125.ru:articles</span>
+</div>
+<div id="nav">
+<ul>
+<li><a href="/">index</a>
+<!--/--></li>
+<li><a href="/about.html">about</a>
+<!--/about.html--></li>
+<li><a href="/rnd/">random</a>
+<!--/random/--></li>
+<li><a href="/blog/">blog</a>
+<!--/blog/--></li>
+<li><a href="/articles/">articles</a>
+<!--/articles/--></li>
+<li><a href="/htmltest.html">htmltest</a>
+<!--/htmltest.html--></li>
+</ul>
+</div>
+
+<div id="main">
+<div class="blog">
+<h1>Фиксим сглаживание в Java Swing приложениях</h1>
+<h3 class="blog-date">12.10.2025</h3>
+<p>Захотел поиграть в infdev и alpha Minecraft, и скачал себе Betacraft.
+<br>
+Запускаю, а тут такая картина:
+</p>
+<p><img src="https://media.etar125.ru/bcb_1210.png" alt="Несглаженный текст">
+</p>
+<p>Решается всё очень просто: добавьте к параметрам запуска (перед -jar) <code>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true</code>.
+<br>
+Чтобы постоянно это не прописывать, добавьте в свой <code>.bashrc</code>:
+</p>
+<pre><code>export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+</code></pre>
+<p>Результат:
+</p>
+<p><img src="https://media.etar125.ru/bca_1210.png" alt="Сглаженный текст">
+</p>
+</div>
+
+</div>
+</body>
+</html>
