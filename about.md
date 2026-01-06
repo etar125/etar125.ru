@@ -1,6 +1,6 @@
 # Обо мне
 
-Я *Медведев Евгений*, псевдонимы: *etar125* (Admanse), Enerphis, liden, InnieSharp, indev, Fonechi,
+Я **Медведев Евгений**, псевдонимы: **etar125** (Admanse), Enerphis, liden, InnieSharp, indev, Fonechi,
 XTechi, Varinosik, may75k/may7k и др.  
 Под Linux пишу основной софт на C, гуишный на Tcl/Tk, скриптики на Tcl, Bash, POSIX Shell.  
 Помимо программирования увлекаюсь чтением комиксов (т.е. манга, манхва...) и просмотром некоторых сериалов
@@ -38,4 +38,4 @@ Unturned...
 **WM**: JWM  
 Обоина WinXP Autumn.
 
-![Рабочий стол](https://media.etar125.ru/desktop.png)
+![Рабочий стол](https://media.etar125.ru/desktop.jpg)
