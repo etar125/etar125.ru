@@ -1,7 +1,8 @@
 #!/bin/bash
-mv .static/.ftpauto ../
+[[ -d ".static/.ftpauto" ]] && mv .static/.ftpauto ../
 ./e1sg.tcl .
-mv .ftpauto .static/
+[[ -d ".ftpauto" ]] mv .ftpauto .static/
 cp ftpauto.sh .static/
+cp .env .static/
 cd .static
 ./ftpauto.sh
