@@ -1,13 +1,13 @@
 #!/bin/env tclsh
-# etar125's site generator v0.25.12_08
-# Copyright (c) 2025 etar125
+# etar125's site generator v0.26.1_10
+# Copyright (c) 2025-2026 etar125
 # 
 # Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 # 
 # THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 proc usage {} {
-	puts "etar125's site generator v0.25.12_08"
+	puts "etar125's site generator v0.26.1_10"
 	puts "[info script] /path/to/site"
 exit 1
 }
@@ -33,10 +33,11 @@ if {[file exists ".static"]} {
 }
 file mkdir .static
 foreach file [glob -nocomplain * .*] {
-    if {$file == "e1sg.conf" || $file == ".static" ||
-		$file == "." || $file == ".." || $file == ".git" ||
-		$file == "e1sg.tcl" || $file == ".gitignore" ||
-		$file == "script.sh"} { continue }
+  #   if {$file == "e1sg.conf" || $file == ".static" ||
+		# $file == "." || $file == ".." || $file == ".git" ||
+		# $file == "e1sg.tcl" || $file == ".gitignore" ||
+		# $file == "script.sh"} { continue }
+	if {[lsearch -exact $ignore_copy $file] >= 0} { continue }
     file copy -force $file .static/
 }
 cd .static
