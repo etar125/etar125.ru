@@ -5,7 +5,7 @@ body {
     padding: 0;
     /*min-height: 100vh;*/
 
-    background-color: #19191A;
+    background-color: #111;
     color: #efefef;
     font-family: sans-serif;
     font-size: 1.2em;
@@ -53,7 +53,7 @@ img {
     margin-right: 10px;
     padding: 1em 0;
     width: 150px;
-    background-color: #3d3d3e;
+    background-color: #222;
     z-index: 999;
     /*word-wrap: break-word;*/
     word-break: break-all;
@@ -114,8 +114,8 @@ img {
 }
 
 #main ul, ol {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #main h1 {
@@ -140,9 +140,9 @@ img {
 
 #main > :first-child { margin-top:0; }
 
-#main img {
+/*#main img {
     max-width: 70%;
-}
+}*/
 
 .blog h1 + h3.blog-date {
     margin-top: 0.5em;
