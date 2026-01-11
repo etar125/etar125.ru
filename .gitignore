@@ -4,3 +4,5 @@ script.sh
 .static/.ftpauto
 .static/ftpauto.sh
 .static/.env
+.static/.script
+.script
