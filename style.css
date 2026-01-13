@@ -3,6 +3,7 @@
 body {
     margin: 0;
     padding: 0;
+    padding-bottom: 320px;
     /*min-height: 100vh;*/
 
     background-color: #111;
