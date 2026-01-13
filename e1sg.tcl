@@ -154,6 +154,7 @@ set html_body "<!DOCTYPE html>
 <html>
 <head>
 <meta charset=\"UTF-8\"/>
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
 <title>${site_name}:<<section>></title>
 <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\"/>
 </head>
@@ -161,10 +162,7 @@ set html_body "<!DOCTYPE html>
 ${html_menu}
 <div id=\"main\">
 <<main>>
-</div>
-<div class=\"footer\">
-Сайт собран с помощью <a href=\"https://github.com/etar125/etar125.ru\">e1sg</a> и <a href=\"https://github.com/etar125/1md\">1md</a>.<br>
-Дата сборки: <code>[exec date "+%F %R %:z"]</code>
+<<misc>>
 </div>
 </body>
 </html>
@@ -207,6 +205,12 @@ proc process_dir {dir} {
 		set c_aliases [list {*}$aliases {*}$new_aliases]
 		set vname [get_vname $c_aliases $f]
 		set new_data [string map [list "<<section>>" $vname "<<main>>" ${data}] $new_data]
+		if {$dir == "" && $f == "index.html"} {
+			set new_data [string map [list "<<misc>>" "<p>Сайт собран с помощью <a href=\"https://github.com/etar125/etar125.ru\">e1sg</a> и <a href=\"https://github.com/etar125/1md\">1md</a>.<br>
+Дата сборки: <code>[exec date "+%F %R %:z"]</code></p>"] $new_data]
+		} else {
+			set new_data [string map [list "<<misc>>" ""] $new_data]
+		}
 		set fp [open $f w]
 		puts -nonewline $fp $new_data
 		close $fp
