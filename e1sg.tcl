@@ -207,7 +207,7 @@ proc process_dir {dir} {
 		set new_data [string map [list "<<section>>" $vname "<<main>>" ${data}] $new_data]
 		if {$dir == "" && $f == "index.html"} {
 			set new_data [string map [list "<<misc>>" "<p>Сайт собран с помощью <a href=\"https://github.com/etar125/etar125.ru\">e1sg</a> и <a href=\"https://github.com/etar125/1md\">1md</a>.<br>
-Дата сборки: <code>[exec date "+%F %R %:z"]</code></p>"] $new_data]
+Дата сборки: <code>[exec date "+%F %R (%:z)"]</code></p>"] $new_data]
 		} else {
 			set new_data [string map [list "<<misc>>" ""] $new_data]
 		}
