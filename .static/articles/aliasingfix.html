@@ -31,21 +31,27 @@
 <div class="blog">
 <h1>Фиксим сглаживание в Java Swing приложениях</h1>
 <h3 class="blog-date">12.10.2025</h3>
-<p>Захотел поиграть в infdev и alpha Minecraft, и скачал себе Betacraft.
+<p>
+Захотел поиграть в infdev и alpha Minecraft, и скачал себе Betacraft.
 <br>
 Запускаю, а тут такая картина:
 </p>
-<p><img src="https://media.etar125.ru/bcb_1210.jpg" alt="Несглаженный текст">
+<p>
+<img src="https://media.etar125.ru/bcb_1210.jpg" alt="Несглаженный текст">
 </p>
-<p>Решается всё очень просто: добавьте к параметрам запуска (перед -jar) <code>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true</code>.
+<p>
+Решается всё очень просто: добавьте к параметрам запуска (перед -jar) <code>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true</code>.
 <br>
 Чтобы постоянно это не прописывать, добавьте в свой <code>.bashrc</code>:
 </p>
-<pre><code>export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+<pre><code>
+export _JAVA_OPTIONS=&quot;-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true&quot;
 </code></pre>
-<p>Результат:
+<p>
+Результат:
 </p>
-<p><img src="https://media.etar125.ru/bca_1210.jpg" alt="Сглаженный текст">
+<p>
+<img src="https://media.etar125.ru/bca_1210.jpg" alt="Сглаженный текст">
 </p>
 </div>
 
