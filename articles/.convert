@@ -3,9 +3,17 @@
 
 foreach f [glob -nocomplain -directory $dir -type f *.md] {
     if {[lsearch -exact $ignore_convert $f] != -1} { continue }
-    if {[catch {exec 1md -class blog $f > [file rootname $f].html} error_msg]} {
+    if {$verbose} { puts "converting file $f" }
+    set fname "[file rootname $f].html"
+    set fp [open $fname w]
+    puts $fp "<div class=\"blog\">"
+    close $fp
+    if {[catch {exec {*}$md_handler $f >> $fname} error_msg]} {
         puts "error while converting ${f}: ${error_msg}"
     }
+    set fp [open $fname a]
+    puts $fp "</div>"
+    close $fp
     file delete $f
 }
 
@@ -97,7 +105,8 @@ set fd [open $fname w]
 puts $fd $articles
 close $fd
 
-if {[catch {exec 1md $fname > [file rootname $fname].html} error_msg]} {
+if {$verbose} {puts "converting file $fname"}
+if {[catch {exec {*}$md_handler $fname > [file rootname $fname].html} error_msg]} {
     puts "error while converting index.md: ${error_msg}"
 }
 file delete $fname

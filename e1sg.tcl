@@ -1,5 +1,5 @@
 #!/bin/env tclsh
-# etar125's site generator v0.26.1_13
+# etar125's site generator v0.26.2_7
 # Copyright (c) 2025-2026 etar125
 # 
 # Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
@@ -55,7 +55,7 @@ cd .static
 # }
 
 proc convert_dir {dir} {
-	global ignore_convert md_handler
+	global ignore_convert md_handler verbose
 	if {$dir != ""} {
 		set proc_name [file join $dir ".convert"]
 		set preproc_name [file join $dir ".preconvert"]
@@ -77,6 +77,7 @@ proc convert_dir {dir} {
 	} else {
 		foreach f [glob -nocomplain -directory $dir -type f *.md] {
 			if {[lsearch -exact $ignore_convert $f] != -1} { continue }
+			if {$verbose} { puts "converting file $f" }
 			if {[catch {exec {*}$md_handler $f > [file rootname $f].html} error_msg]} {
 				puts "error while converting ${f}: ${error_msg}"
 			}
@@ -172,7 +173,7 @@ ${html_menu}
 set html_menu_bak {}
 
 proc process_dir {dir} {
-	global ignore_process md_handler html_body html_menu aliases html_menu_bak
+	global ignore_process md_handler html_body html_menu aliases html_menu_bak verbose
 	if {$dir != ""} {
 		set preproc_name [file join $dir ".preprocess"]
 		set postproc_name [file join $dir ".postprocess"]
@@ -196,7 +197,7 @@ proc process_dir {dir} {
 	}
 
 	foreach f [glob -nocomplain -directory $dir -type f *.html] {
-		puts "processing file ${f}"
+		if {$verbose} { puts "processing file ${f}" }
 		if {[lsearch -exact $ignore_process $f] != -1} { continue }
 		set fp [open $f r]
 		set data [read $fp]
