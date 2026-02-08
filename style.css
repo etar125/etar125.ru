@@ -1,182 +1,103 @@
-*, *::before, *::after { box-sizing:border-box; }
-
 body {
-    margin: 0;
     padding: 0;
-    /*min-height: 100vh;*/
-
-    background-color: #111;
-    color: #efefef;
+    margin: 0;
     font-family: sans-serif;
+}
+
+code {
     font-size: 1.2em;
-}
-
-a {
-    color: #5DB7FC;
-}
-
-a:visited {
-    color: #5DB7FC;
-}
-
-img {
-    max-width: 200mm;
-    height: auto;
-    object-fit: contain;
-    display: block;
+    word-break: break-all;
 }
 
 #logo {
     width: 100%;
-    font-size: 1.2em;
-    background-color: #0F0F0F;
-    padding: 2px 15px;
-    line-height: 1.2;
-    white-space: nowrap;
+    background-color: #B4F6FF;
+    font-size: 1.15em;
 }
 
 #logo #name {
+    margin-left: 5px;
     font-weight: bold;
-    color: #fff;
-    margin-right: 25px;
-}
-
-#logo #desc {
-    color: #ccc;
-    margin-right: 25px;
 }
 
 #nav {
-    float: left;
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-right: 10px;
-    padding: 1em 0;
-    width: 150px;
-    background-color: #222;
-    z-index: 999;
-    /*word-wrap: break-word;*/
-    word-break: break-all;
+    width: 100%;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #B4F6FF;
 }
 
 #nav ul {
-    margin: 0;
+    margin-top: 0;
     padding: 0;
 }
 
-#nav li {
-    list-style: none;
+#nav ul li {
+    display: inline;
 }
 
-#nav li ul {
-    padding-left: 0.6em !important;
-}
-
-#nav li a {
+#nav a {
     text-decoration: none;
-    display: block;
-    margin: 0;
-    padding: 0.8ex 2em 0.8ex 1em;
-    color: #fff;
+    background-color: #82DEEB;
+    margin-left: 5px;
+    color: #000;
 }
 
-#nav li a:hover {
-    /*background-color: #5d686f;*/
-    text-decoration: none;
-    display: block;
-    margin: 0;
-    padding: 0.8ex 2em 0.8ex 1em;
-    color: #fff;
-    background-color: #2C2C2C;
+#nav a:hover {
+    color: #fff !important;
 }
 
-#nav li a.active {
-    text-decoration: none;
-    display: block;
-    margin: 0;
-    padding: 0.8ex 2em 0.8ex 1em;
-    font-weight: bold;
-    color: #fff;
+#nav a:visited {
+    color: #000;
 }
 
 #main {
-    margin-left: 170px;
-    margin-top: 8px;
-    padding-bottom: 32px;
-    max-width: 210mm;
-    /*overflow-wrap: break-word;
-    word-break: break-word;*/
-    /*word-break: break-all;*/
+    max-width: 80%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 60px;
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: normal;
     hyphens: auto;
 }
 
-#main ul, ol {
-    margin-top: 5px;
-    margin-bottom: 5px;
+#main img {
+    max-width: 80%;
 }
 
-#main h1 {
-    margin: 1em 1ex 0.5ex 0;
-    font-size: 1.6em;
+a {
+    text-decoration: none;
+    color: #3A7EFF;
+}
+a:visited {
+    color: #3A7EFF;
+}
+a:hover {
+    text-decoration: revert;
 }
 
-#main h2 {
-    margin: 1em 1ex 0.5ex 0;
-    font-size: 1.5em;
-}
-
-#main h3 {
-    margin: 1em 1ex 0.5ex 0;
-    font-size: 1.2em;
-}
-
-#main h4 {
-    margin: 1em 1ex 0.5ex 0;
-    font-size: 0.9em;
-}
-
-#main > :first-child { margin-top:0; }
-
-/*#main img {
-    max-width: 70%;
-}*/
-
-.blog h1 + h3.blog-date {
-    margin-top: 0.5em;
-}
-
-.blog h3.blog-date {
-    font-style: italic;
-}
-
-#main a.header-link {
-    color: #efefef;
+a.header-link {
+    color: #000;
     text-decoration: none;
 }
-#main code {
-    padding: 2px 2px 2px 2px;
-    background-color: #131314;
+a.header-link:hover {
+    text-decoration: revert;
 }
 
-#main pre {
-    padding: 4px 4px 4px 4px;
-    white-space: pre-wrap;
-    /*overflow-wrap: break-word;
-    word-break: break-word;*/
-    max-width: 100%;
-    background-color: #131314;
-}
-
-#main code {
-    word-wrap: revert;
-    overflow-wrap: revert;
-    word-break: break-all;
-    hyphens: revert;
-}
-
-#main img {
-    max-width: 100%;
+#footer {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    bottom: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
 }

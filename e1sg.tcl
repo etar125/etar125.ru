@@ -1,13 +1,15 @@
 #!/bin/env tclsh
-# etar125's site generator v0.26.2_7
+# etar125's site generator v0.26.2_8
 # Copyright (c) 2025-2026 etar125
 # 
 # Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 # 
 # THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+set version "0.26.2_8"
+
 proc usage {} {
-	puts "etar125's site generator v0.26.1_13"
+	puts "etar125's site generator v$version"
 	puts "[info script] /path/to/site"
 exit 1
 }
@@ -27,6 +29,8 @@ if {![file exists "e1sg.conf"]} {
 }
 
 source "e1sg.conf"
+lappend ignore_nav "e1sg_info.html"
+lappend aliases { "e1sg_info.html" "e1sg" }
 
 if {[file exists ".static"]} {
 	file delete -force ".static"
@@ -158,12 +162,18 @@ set html_body "<!DOCTYPE html>
 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
 <title>${site_name}:<<section>></title>
 <link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\"/>
+$meta
 </head>
 <body>
 ${html_menu}
 <div id=\"main\">
 <<main>>
-<<misc>>
+</div>
+<div id=\"footer\">
+<p>
+Сайт <a href=\"/e1sg_info.html\">собран</a> с помощью <a href=\"https://github.com/etar125/etar125.ru\">e1sg</a>.<br>
+$footer
+</p>
 </div>
 </body>
 </html>
@@ -206,12 +216,12 @@ proc process_dir {dir} {
 		set c_aliases [list {*}$aliases {*}$new_aliases]
 		set vname [get_vname $c_aliases $f]
 		set new_data [string map [list "<<section>>" $vname "<<main>>" ${data}] $new_data]
-		if {$dir == "" && $f == "index.html"} {
-			set new_data [string map [list "<<misc>>" "<p>Сайт собран с помощью <a href=\"https://github.com/etar125/etar125.ru\">e1sg</a> и <a href=\"https://github.com/etar125/1md\">1md</a>.<br>
-Дата сборки: <code>[exec date "+%F %R (%:z)"]</code></p>"] $new_data]
-		} else {
-			set new_data [string map [list "<<misc>>" ""] $new_data]
-		}
+# 		if {$dir == "" && $f == "index.html"} {
+# 			set new_data [string map [list "<<misc>>" "<p>Сайт собран с помощью <a href=\"https://github.com/etar125/etar125.ru\">e1sg</a> и <a href=\"https://github.com/etar125/1md\">1md</a>.<br>
+# Дата сборки: <code>[exec date "+%F %R (%:z)"]</code></p>"] $new_data]
+# 		} else {
+# 			set new_data [string map [list "<<misc>>" ""] $new_data]
+# 		}
 		set fp [open $f w]
 		puts -nonewline $fp $new_data
 		close $fp
@@ -236,6 +246,13 @@ proc process_dir {dir} {
 		set html_menu_bak [lrange $html_menu_bak 0 end-1]
 	}
 }
+
+set fp [open "e1sg_info.html" w]
+puts $fp "Сайт собран с помощью <a href=\"https://github.com/etar125/etar125.ru\">e1sg</a>.<br>
+Дата сборки: <code>[exec date "+%F %R %Z"]</code><br>
+Версия e1sg: <code>$version</code><br>
+Обработчик Markdown: <code>$md_handler_vname</code>"
+close $fp
 
 process_dir ""
 
