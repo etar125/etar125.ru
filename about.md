@@ -38,4 +38,4 @@ Unturned...
 **WM**: JWM  
 Обоина WinXP Autumn.
 
-![Рабочий стол](https://media.etar125.ru/desktop.jpg)
+!![Рабочий стол](https://etar125.ru/media/desktop.jpg)
