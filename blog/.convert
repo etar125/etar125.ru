@@ -54,7 +54,7 @@ proc clean_h3_and_add_class {html} {
     return $html
 }
 
-set articles "# Мой блог\n\n"
+set articles "# Мой блог\n\n\[RSS Feed\](https://etar125.ru/blog/rss.xml)\n\n"
 foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.html]] {
     if {[lsearch -exact $ignore_convert $f] != -1} { continue }
     set fd [open $f r]
@@ -80,3 +80,80 @@ if {[catch {exec {*}$md_handler $fname > [file rootname $fname].html} error_msg]
     puts "error while converting index.md: ${error_msg}"
 }
 file delete $fname
+
+# От DeepSeek
+
+set rss_file [file join $dir "rss.xml"]
+set fd [open $rss_file w]
+
+puts $fd {<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>Мой блог</title>
+<link>https:/etar125.ru/blog</link>
+<description>Просто мой блог</description>
+<language>ru-ru</language>}
+
+foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.html]] {
+    if {[string match "index.html" [file tail $f]]} { continue }
+    if {[lsearch -exact $ignore_convert $f] != -1} { continue }
+    if {$verbose} { puts "adding to rss feed $f" }
+    
+    set fd_html [open $f r]
+    set html_content [read $fd_html]
+    close $fd_html
+    
+    # Извлекаем заголовок H1
+    set title ""
+    if {[regexp {<h1[^>]*>(.*?)</h1>} $html_content -> title_content]} {
+        set title [string trim $title_content]
+    }
+    
+    # Извлекаем дату из H3
+    set date_str ""
+    if {[regexp {<h3 class="blog-date">(.*?)</h3>} $html_content -> date_content]} {
+        set date_str [string trim $date_content]
+    }
+    
+    # Форматируем дату для RSS
+    set pub_date ""
+    if {$date_str ne ""} {
+        # ISO формат: 2025-03-15 или 2025-03-15_12
+        if {[regexp {^(\d{4})-(\d{2})-(\d{2})(?:_(\d{2}))?$} $date_str -> year month day hour]} {
+            if {$hour eq ""} { set hour "00" }
+            set months [list Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec]
+            set month_name [lindex $months [expr {$month - 1}]]
+            set pub_date "$day $month_name $year ${hour}:00:00 GMT"
+        }
+    }
+    
+    # Извлекаем ID из имени файла для guid
+    set file_id [file rootname [file tail $f]]
+    set guid "https://etar125.ru/blog/$file_id.html"
+    
+    # Удаляем H1 и H3 из контента
+    regsub {<h1[^>]*>.*?</h1>} $html_content "" html_content
+    regsub {<h3 class="blog-date">.*?</h3>} $html_content "" html_content
+    
+    # Очищаем лишние пробелы и переносы
+    set html_content [string trim $html_content]
+    
+    # Формируем описание (всё содержимое кроме H1 и H3)
+    set description [string map {< < > > & &} $html_content]
+    
+    puts $fd "\n<item>"
+    puts $fd "  <title><!\[CDATA\[$title\]\]></title>"
+    puts $fd "  <link>$guid</link>"
+    puts $fd "  <guid>$guid</guid>"
+    if {$pub_date ne ""} {
+        puts $fd "  <pubDate>$pub_date</pubDate>"
+    }
+    puts $fd "  <description><!\[CDATA\[$description\]\]></description>"
+    puts $fd "</item>"
+}
+
+puts $fd "\n</channel>\n</rss>"
+close $fd
+
+if {$verbose} { puts "rss feed created: $rss_file" }

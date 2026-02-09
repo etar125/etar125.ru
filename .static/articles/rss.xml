@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>Мои статьи</title>
+<link>https:/etar125.ru/articles</link>
+<description>Просто мои статьи</description>
+<language>ru-ru</language>
+
+<item>
+  <title><![CDATA[Тестовая статья]]></title>
+  <link>https://etar125.ru/articles/test.html</link>
+  <guid>https://etar125.ru/articles/test.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Привет. Это тестовая статья.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Фиксим сглаживание в Java Swing приложениях]]></title>
+  <link>https://etar125.ru/articles/aliasingfix.html</link>
+  <guid>https://etar125.ru/articles/aliasingfix.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Захотел поиграть в infdev и alpha Minecraft, и скачал себе Betacraft.
+<br>
+Запускаю, а тут такая картина:
+</p>
+<p>
+<a href="https://etar125.ru/media/bcb_1210.jpg"><img src="https://etar125.ru/media/bcb_1210.jpg" alt="Несглаженный текст"></a>
+</p>
+<p>
+Решается всё очень просто: добавьте к параметрам запуска (перед -jar) <code>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true</code>.
+<br>
+Чтобы постоянно это не прописывать, добавьте в свой <code>.bashrc</code>:
+</p>
+<pre><code>
+export _JAVA_OPTIONS=&quot;-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true&quot;
+</code></pre>
+<p>
+Результат:
+</p>
+<p>
+<a href="https://etar125.ru/media/bca_1210.jpg"><img src="https://etar125.ru/media/bca_1210.jpg" alt="Сглаженный текст"></a>
+</p>
+</div>]]></description>
+</item>
+
+</channel>
+</rss>

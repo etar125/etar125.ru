@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>Мой блог</title>
+<link>https:/etar125.ru/blog</link>
+<description>Просто мой блог</description>
+<language>ru-ru</language>
+
+<item>
+  <title><![CDATA[RSS-лента]]></title>
+  <link>https://etar125.ru/blog/2026-02-09.html</link>
+  <guid>https://etar125.ru/blog/2026-02-09.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Попросил ИИшку добавить в скриптик генерацию RSS-ленту, вроде норм отрабатывает,
+хотя чуть-чуть подправить пришлось. Когда-нибудь перепишу. Да и e1sg перепишу.
+<br>
+Стиль обновил.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[1md (почти) готов! Планы по сайту]]></title>
+  <link>https://etar125.ru/blog/2026-02-07.html</link>
+  <guid>https://etar125.ru/blog/2026-02-07.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Ну сё, <a href="https://github.com/etar125/1md">переписал</a> я полностью 1md.
+Единственное, чего пока нет - это чекбоксы, но это не критично.
+<br>
+Сайт уже с помощью него собирается.
+<br>
+Планы по сайту такие: надо доделать стиль и сделать отдельную
+страницу с инфой по e1sg (ну типа дата сборки, версия...).
+Надо ещё перенести медиа на 1GB.RU в /media/, т.к.
+GitHub для этого вообще не подходит. Хотел вообще на IMGBB
+перенести, так он в России не грузится без ускорителей.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Про сайт и сервак VoxeLibre]]></title>
+  <link>https://etar125.ru/blog/2026-01-26.html</link>
+  <guid>https://etar125.ru/blog/2026-01-26.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Долго на сервак не заходил и случилось прям много важного.
+<br>
+Сейчас лень прописывать всё это и картинки грузить, сделаю потом.
+</p>
+<p>
+Сайт будет скоро (через неделю-две) серьёзно обновлён.
+Продвигаюсь в переписывании 1md, совсем скоро +- готов будет.
+Также, начинаю переделывать дизайн сайта.
+<br>
+В качестве референса брал <a href="http://thalassa.croco.net/">Thalassa CMS</a>,
+но хочу ещё больше тем сделать + гайд на то, как их менять.
+<br>
+Ну и e1sg обновлять надо.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Вернулся к 1GB.RU]]></title>
+  <link>https://etar125.ru/blog/2026-01-13.html</link>
+  <guid>https://etar125.ru/blog/2026-01-13.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+InfinityFree гамном оказался.
+<br>
+Во-первых, какие-то
+проблемы с SSL для моего домена. Во-вторых, он
+на бесплатном тарифе принудительно включает JS
+для защиты от ботов. Мда. Ну короче подправил ftpauto
+и вернулся к <code>1GB.RU</code>. Обновил стиль немного и e1sg.
+<br>
+Теперь на главной странице отображается с помощью чего сделан сайт и дата сборки.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Новый хостинг, планы]]></title>
+  <link>https://etar125.ru/blog/2026-01-11.html</link>
+  <guid>https://etar125.ru/blog/2026-01-11.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Во-первых, сайт успешно перенесён на InfinityFree.
+Тут FTP, поэтому я написал скриптик ftpauto.sh на Bash
+для автоматической загрузки на сервак. Этот вариант
+намного лучше прошлого, который был до e1sg.
+<br>
+Во-вторых, все картинки будут перенесены на ImgBB.
+<br>
+Буду ещё изменять стиль.
+</p>
+<p>
+Кстати, версионирование e1sg
+меняться не будет, поэтому там сейчас версия <code>0.26.1_10</code>.
+А вот версионирование ftpauto уже новое, сейчас версия <code>0.1.8</code>.
+</p>
+<p>
+1md переписывается. Что-то уже выложил на GitHub.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Первая версия нового 1md]]></title>
+  <link>https://etar125.ru/blog/2026-01-06_01.html</link>
+  <guid>https://etar125.ru/blog/2026-01-06_01.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+<code>0.1.0</code>. Всё видно на фото.
+</p>
+<p>
+<a href="https://etar125.ru/media/demo1.jpg"><img src="https://etar125.ru/media/demo1.jpg" alt="Демо"></a>
+</p>
+<p>
+P.S. Переконвертировал все картинки в .jpg
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Скоро будет!..]]></title>
+  <link>https://etar125.ru/blog/2026-01-06_00.html</link>
+  <guid>https://etar125.ru/blog/2026-01-06_00.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<ul>
+<li>
+Хочу сделать список бесплатных хостингов для сайтов с описанием их ограничений.
+</li>
+<li>
+Начну скоро наконец писать новый 1md. Теперь он конвертирует мой md в промежуточный код, который читается уже программами по типу 1md2ht.
+</li>
+<li>
+Перейду на другой хостинг (GH Pages не подходит для этого сайта)
+</li>
+<li>
+Починю <a href="/about.html">about</a>
+</li>
+<li>
+Возможно поменяю стиль сайта
+</li>
+</ul>
+<p>
+Вот так вот.
+</p>
+<p>
+P.S. На SourceForge не перейду, т.к. там вроде нельзя просто личный сайт хостить,
+только сайт проекта. Ну да ладно, как-то пофег.
+<br>
+P.P.S. Мда, текущий 1md пипец как поломан. Хотел нумерованный список сделать,
+а он корректно не робит, закрывается после первого элемента...
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[List manager полностью сделан! + Возможно перейду на SF]]></title>
+  <link>https://etar125.ru/blog/2026-01-01.html</link>
+  <guid>https://etar125.ru/blog/2026-01-01.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Все функции исправно работают. Реализовал динамические опции,
+при сохранении не ломается, т.к. проект сначала удаляется,
+а потом добавляется в список (раньше список модифицировался,
+если проект уже есть в нём).
+</p>
+<p>
+<a href="https://etar125.ru/media/mgr3.jpg"><img src="https://etar125.ru/media/mgr3.jpg" alt="Демонстрация работы List manager"></a>
+</p>
+<p>
+А ещё... Возможно я перенесу свои сайты на SourceForge.
+Там FTP, но работать должно быть удобней, чем с FTP от <code>1GB.RU</code>.
+Кста, сделал кое-какую запись у себя на ютабе. Промежуток между
+этой и прошлой - 2 года...
+<br>
+Собираюсь снять ролик про выбор бесплатного хостинга для сайта...
+За месяц надеюсь что-то да получится.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[С наступающим! Доделал List Manager]]></title>
+  <link>https://etar125.ru/blog/2025-12-31.html</link>
+  <guid>https://etar125.ru/blog/2025-12-31.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+<a href="https://etar125.ru/media/mgr2.jpg"><img src="https://etar125.ru/media/mgr2.jpg" alt="100% конечная"></a>
+</p>
+<p>
+Применил кое-какую темку, скопированную из старой версии
+e1cfg (хотел конфигуратор для TF2 сделать давно когда-то).
+Опций больше добавил, т.к. реализовывать автоматическое
+добавление недостающих опций мне откровенно лень.
+</p>
+<p>
+И да, с наступающим новым годом! По МСК он только через час.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Расширил платформу (VoxeLibre), конечный вид проги для списка]]></title>
+  <link>https://etar125.ru/blog/2025-12-29.html</link>
+  <guid>https://etar125.ru/blog/2025-12-29.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+... (VoxeLibre)
+</p>
+<p>
+<a href="https://etar125.ru/media/portal1.jpg"><img src="https://etar125.ru/media/portal1.jpg" alt="Портал в ад"></a>
+<br>
+<a href="https://etar125.ru/media/expand1.jpg"><img src="https://etar125.ru/media/expand1.jpg" alt="Расширенная платформа"></a>
+</p>
+<p>
+Реализовал уже upd и sel, осталось реализовать сохранение, а остальное по мелочи. Редактирование отдельного md убрал.
+</p>
+<p>
+<a href="https://etar125.ru/media/mgr1.jpg"><img src="https://etar125.ru/media/mgr1.jpg" alt="Конечный вид"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Переехал (VoxeLibre)]]></title>
+  <link>https://etar125.ru/blog/2025-12-28_01.html</link>
+  <guid>https://etar125.ru/blog/2025-12-28_01.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Короче, ту базу успешно нашли. Когда я обустраивал, вышел из портала какой-то чел,
+прокапался ко мне и убил. Я сразу же вышел, чтоб он кровать не нашёл. Зашёл
+под другим ником, отбежал от спавна далеко, по пути чей-то дом разрушил. Начал базу строить.
+<br>
+Зашёл как-то под ником etar125, вроде не взорвали,
+но оставаться я там не собираюсь.
+Да и важного ничего нет. Кстати, хотите прикол?
+Я блять за 5 минут нашёл больше алмазов, чем за &gt; 2 часа копания на той базе.
+Я нашёл чуть больше 20 алмазов. Впервые сам построил портал в ад, узнал, что рядом кто-то живёт (бля), умер. Разрушил тот портал , переместил в другое место. Сделаю золотую броню и пойду в ад.
+</p>
+<p>
+<a href="https://etar125.ru/media/again1.jpg"><img src="https://etar125.ru/media/again1.jpg" alt="Новая база 1"></a>
+<br>
+<a href="https://etar125.ru/media/again2.jpg"><img src="https://etar125.ru/media/again2.jpg" alt="Новая база 2"></a>
+<br>
+<a href="https://etar125.ru/media/again3.jpg"><img src="https://etar125.ru/media/again3.jpg" alt="Новая база 3"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Делаю список проектов, переписываю 1md...]]></title>
+  <link>https://etar125.ru/blog/2025-12-28_00.html</link>
+  <guid>https://etar125.ru/blog/2025-12-28_00.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Начал переписывать 1md +- кардинально с использованием e1l,
+которую я <a href="https://github.com/etar125/e1l">выложил</a> на GitHub.
+<br>
+Также, параллельно делаю список своих проектов, пока занимаюсь прогой
+для заполнения списка. Сделал набросок того, чего хочу, начал его разрабатывать,
+понял, что хрень и набросал ещё один. Щяс начну реализовывать его.
+</p>
+<p>
+<a href="https://etar125.ru/media/nabrosok.jpg"><img src="https://etar125.ru/media/nabrosok.jpg" alt="Набросок 1"></a>
+<br>
+<a href="https://etar125.ru/media/newnabrosok.jpg"><img src="https://etar125.ru/media/newnabrosok.jpg" alt="Набросок 2"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Новая постройка (VoxeLibre)]]></title>
+  <link>https://etar125.ru/blog/2025-12-21.html</link>
+  <guid>https://etar125.ru/blog/2025-12-21.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Начал строить подобие бункера. Сначала хотел сделать спуск по обычной лестнице, но решил сделать круговую из полублоков.
+<br>
+Копал я значит этот спуск, а тут резко пещера, а там дохрена всяких мобов. Я бл вещи забирал полчаса, сгорел несколько раз. А сама пещера оказалась малюсенькой! Пздц.
+<br>
+А, ну и ещё сегодня опять человеков +- ок, 6 людей, 2 из которых русскоговорящие.
+</p>
+<p>
+<a href="https://etar125.ru/media/front1.jpg"><img src="https://etar125.ru/media/front1.jpg" alt="Со стороны"></a>
+<br>
+<a href="https://etar125.ru/media/front2.jpg"><img src="https://etar125.ru/media/front2.jpg" alt="Парадная"></a>
+<br>
+<a href="https://etar125.ru/media/inside1.jpg"><img src="https://etar125.ru/media/inside1.jpg" alt="Внутри"></a>
+<br>
+<a href="https://etar125.ru/media/stairs.jpg"><img src="https://etar125.ru/media/stairs.jpg" alt="Лестница"></a>
+<br>
+<a href="https://etar125.ru/media/emptyroom.jpg"><img src="https://etar125.ru/media/emptyroom.jpg" alt="Пустая комната"></a>
+<br>
+<a href="https://etar125.ru/media/mainrooms.jpg"><img src="https://etar125.ru/media/mainrooms.jpg" alt="Основные комнаты"></a>
+<br>
+<a href="https://etar125.ru/media/storage.jpg"><img src="https://etar125.ru/media/storage.jpg" alt="Склад"></a>
+<br>
+<a href="https://etar125.ru/media/furnaces.jpg"><img src="https://etar125.ru/media/furnaces.jpg" alt="Печки"></a>
+<br>
+<a href="https://etar125.ru/media/cave1.jpg"><img src="https://etar125.ru/media/cave1.jpg" alt="Вход в пещеру"></a>
+<br>
+<a href="https://etar125.ru/media/cave2.jpg"><img src="https://etar125.ru/media/cave2.jpg" alt="Пещера 1"></a>
+<br>
+<a href="https://etar125.ru/media/cave3.jpg"><img src="https://etar125.ru/media/cave3.jpg" alt="Пещера 2"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Много чего случилось на сервере...]]></title>
+  <link>https://etar125.ru/blog/2025-12-20.html</link>
+  <guid>https://etar125.ru/blog/2025-12-20.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Давно не постил ничего, а накопилось событий много. Во-первых, хату, которая в воздухе, ограбили. Т.е. украли ценные вещи, + сцыганили пол деревянный (зачем??):
+</p>
+<p>
+<a href="https://etar125.ru/media/newfloor.jpg"><img src="https://etar125.ru/media/newfloor.jpg" alt="Нет пола"></a>
+</p>
+<p>
+Ну поэтому я и начал строить ещё больше домов, чтоб не смогли абсолютно всё сломать и украсть (хоть там и мусор лежит) (сфоткал вблизи только один, к другим лень идти было):
+</p>
+<p>
+<a href="https://etar125.ru/media/newhouse1_1.jpg"><img src="https://etar125.ru/media/newhouse1_1.jpg" alt="Со стороны"></a>
+<br>
+<a href="https://etar125.ru/media/newhouse1_2.jpg"><img src="https://etar125.ru/media/newhouse1_2.jpg" alt="Со стороны"></a>
+<br>
+<a href="https://etar125.ru/media/newhouse1_3.jpg"><img src="https://etar125.ru/media/newhouse1_3.jpg" alt="Внутри"></a>
+<br>
+<a href="https://etar125.ru/media/newhouse1_4.jpg"><img src="https://etar125.ru/media/newhouse1_4.jpg" alt="Внутри"></a>
+<br>
+<a href="https://etar125.ru/media/otherhouses.jpg"><img src="https://etar125.ru/media/otherhouses.jpg" alt="Другие дома"></a>
+</p>
+<p>
+Мой новый дом:
+</p>
+<p>
+<a href="https://etar125.ru/media/current1.jpg"><img src="https://etar125.ru/media/current1.jpg" alt="Новый дом"></a>
+<br>
+<a href="https://etar125.ru/media/current2.jpg"><img src="https://etar125.ru/media/current2.jpg" alt="Новый дом"></a>
+<br>
+<a href="https://etar125.ru/media/current3.jpg"><img src="https://etar125.ru/media/current3.jpg" alt="Новый дом"></a>
+<br>
+<a href="https://etar125.ru/media/current4.jpg"><img src="https://etar125.ru/media/current4.jpg" alt="Новый дом"></a>
+<br>
+<a href="https://etar125.ru/media/current5.jpg"><img src="https://etar125.ru/media/current5.jpg" alt="Новый дом"></a>
+<br>
+<a href="https://etar125.ru/media/current6.jpg"><img src="https://etar125.ru/media/current6.jpg" alt="Новый дом"></a>
+<br>
+<a href="https://etar125.ru/media/current7.jpg"><img src="https://etar125.ru/media/current7.jpg" alt="Новый дом"></a>
+</p>
+<p>
+Рядом со мной кто-то поселился (в пещере, на месте старого дома и под текущим), а также какие-то твари обокрали меня ещё раз, при чём несколько раз. В первый раз украли руду и дерево, во второй раз украли руду и печки в доме, а в третий раз какой-то олух украл все печки из базы в воздухе и из пещеры... Так ещё кто-то мою кровать сломал. А там две стоит, хз кто украл, поэтому взял вторую (которая на месте первого дома).
+<br>
+P.S. Кто-то добрый что-то добавил даже в текущий дом, например, уголь в печках. Ого. Ну и я ещё с кем-то общался табличками.
+</p>
+<p>
+<a href="https://etar125.ru/media/who.jpg"><img src="https://etar125.ru/media/who.jpg" alt="Кто-то поселился в моей пещере"></a>
+<br>
+<a href="https://etar125.ru/media/bed1.jpg"><img src="https://etar125.ru/media/bed1.jpg" alt="Кровать 1, не сломал"></a>
+<br>
+<a href="https://etar125.ru/media/bed2.jpg"><img src="https://etar125.ru/media/bed2.jpg" alt="Кровать 2, сломал"></a>
+<br>
+<a href="https://etar125.ru/media/signs.jpg"><img src="https://etar125.ru/media/signs.jpg" alt="Переписка табличками"></a>
+</p>
+<p>
+Кстати, сегодня игроков вообще много. Целых 10-13!
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Строю новый дом (VoxeLibre)]]></title>
+  <link>https://etar125.ru/blog/2025-12-09.html</link>
+  <guid>https://etar125.ru/blog/2025-12-09.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Начал строить новый дом над своим разбомбленным. Что-то уже есть.
+<br>
+Он будет чисто в воздухе + очень большим (очень), многа отделов и мелких домиков будет.
+</p>
+<p>
+<a href="https://etar125.ru/media/hhouse1.jpg"><img src="https://etar125.ru/media/hhouse1.jpg" alt="Основая часть"></a>
+<a href="https://etar125.ru/media/hhouse2.jpg"><img src="https://etar125.ru/media/hhouse2.jpg" alt="Табличка"></a>
+<a href="https://etar125.ru/media/hhouse3.jpg"><img src="https://etar125.ru/media/hhouse3.jpg" alt="Вид с доп. части"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Разбомбили хату; другой хостинг]]></title>
+  <link>https://etar125.ru/blog/2025-12-08.html</link>
+  <guid>https://etar125.ru/blog/2025-12-08.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Разбомбили мне всю хату. Несколько дней не заходил (4-5 мб, сам скрин сделан 1-2 дня назад),
+ближе к ночи под стрим братишкина решил проверить, чё там, а тут такое. Короче, может уйду на другой сервак, 
+этот кал какое-то лагучее. Ну или построю хату побольше.
+</p>
+<p>
+<a href="https://etar125.ru/media/razbombili.jpg"><img src="https://etar125.ru/media/razbombili.jpg" alt="..."></a>
+</p>
+<p>
+Также перенёс сайт на GitHub Pages, + все фотки в другом репозитории и поддомене.
+<br>
+<a href="https://etar125.ru">etar125.ru</a> -&gt; <a href="https://github.com/etar125/etar125.ru">GitHub</a>
+<br>
+<a href="https://etar125.ru/media">etar125.ru/media</a> -&gt; <a href="https://github.com/etar125/etar125.ru/media">GitHub</a>
+<br>
+Я этим GH Pages уже день занимаюсь, наконец-таки всё вроде настроил, пока работает.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Немного развился (VoxeLibre)]]></title>
+  <link>https://etar125.ru/blog/2025-11-30.html</link>
+  <guid>https://etar125.ru/blog/2025-11-30.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+
+Провожу почти всё время копая. Сделал небольшую пристройку, уводящую в гору, там и копаюсь.  
+Перенёс ферму пшеницы в начало пристройки.  
+Что я накопал за вчерашний и сегодняшний день:
+</p>
+<ul>
+<li>
+Железо 72
+</li>
+<li>
+Уголь 36
+</li>
+<li>
+Золото 72
+</li>
+<li>
+Доски 298
+</li>
+<li>
+Гравий 11
+</li>
+<li>
+Диорит 42
+</li>
+<li>
+Андезит 49
+</li>
+<li>
+Гранит 197
+</li>
+<li>
+Булыжник 1848
+
+<a href="https://etar125.ru/media/newhouse1.jpg"><img src="https://etar125.ru/media/newhouse1.jpg" alt="Начало"></a>  
+<a href="https://etar125.ru/media/newhouse2.jpg"><img src="https://etar125.ru/media/newhouse2.jpg" alt="Середина"></a>  
+<a href="https://etar125.ru/media/newhouse3.jpg"><img src="https://etar125.ru/media/newhouse3.jpg" alt="Парадная"></a>  
+<a href="https://etar125.ru/media/newhouse4.jpg"><img src="https://etar125.ru/media/newhouse4.jpg" alt="1 этаж"></a>  
+<a href="https://etar125.ru/media/newhouse5.jpg"><img src="https://etar125.ru/media/newhouse5.jpg" alt="1 этаж"></a>  
+<a href="https://etar125.ru/media/newhouse6.jpg"><img src="https://etar125.ru/media/newhouse6.jpg" alt="2 этаж"></a>  
+<a href="https://etar125.ru/media/newhouse7.jpg"><img src="https://etar125.ru/media/newhouse7.jpg" alt="Лестница к шахте"></a>  
+<a href="https://etar125.ru/media/newhouse8.jpg"><img src="https://etar125.ru/media/newhouse8.jpg" alt="Спуск в шахту"></a>  
+<a href="https://etar125.ru/media/newhouse9.jpg"><img src="https://etar125.ru/media/newhouse9.jpg" alt="Шахта"></a>  
+<a href="https://etar125.ru/media/newhouse10.jpg"><img src="https://etar125.ru/media/newhouse10.jpg" alt="Шахта"></a>  
+<a href="https://etar125.ru/media/newhouse11.jpg"><img src="https://etar125.ru/media/newhouse11.jpg" alt="Шахта"></a>  
+<a href="https://etar125.ru/media/newhouse12.jpg"><img src="https://etar125.ru/media/newhouse12.jpg" alt="Шахта"></a>
+</li>
+</ul>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Про Minetest, 1md, версионирование]]></title>
+  <link>https://etar125.ru/blog/2025-11-29.html</link>
+  <guid>https://etar125.ru/blog/2025-11-29.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Открыл для себя мультиплеер Minetest, позаходил на пару сервачков
+и выбрал кое-какой с названием &quot;2b2t&quot;. Игра VoxeLibre с какими-то модами.
+Повыживал немного, сделал подальше от спавна домик утром,
+вечером ещё раз зашёл — ничего вроде не сломали.
+Кстати, а рядом совсем была уже разбомбленная база какого-то чела,
+надеюсь до меня не доберутся))
+</p>
+<p>
+Собираюсь добавить в 1md интерпретацию некоторых команд.
+Пока не придумал каких, но добавлю. Не скоро.
+</p>
+<p>
+А, и ещё. Теперь я буду изменять версионирование с моего <code>MAJOR.YEAR.MONTH_DAY</code>
+на обычный <code>MAJOR.MINOR.PATCH</code>. Делаю сейчас один проектик,
+там уже новое версионирование, посмотрим как пойдёт.
+</p>
+<p>
+Сейчас фотки домика сделаю...
+</p>
+<p>
+P.S. Играл с пингом и честно не понял, это я лагаю или сервак.
+Иногда по 5 сек или больше ждать приходилось.
+</p>
+<p>
+<a href="https://etar125.ru/media/house0.jpg"><img src="https://etar125.ru/media/house0.jpg" alt="Парадная без F1"></a>
+<br>
+<a href="https://etar125.ru/media/house1.jpg"><img src="https://etar125.ru/media/house1.jpg" alt="Парадная С F1"></a>
+<br>
+<a href="https://etar125.ru/media/house2.jpg"><img src="https://etar125.ru/media/house2.jpg" alt="Внутри дома"></a>
+<br>
+<a href="https://etar125.ru/media/house3.jpg"><img src="https://etar125.ru/media/house3.jpg" alt="Парадная ещё раз"></a>
+<br>
+<a href="https://etar125.ru/media/house4.jpg"><img src="https://etar125.ru/media/house4.jpg" alt="Задний вход"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Сайт обновлён]]></title>
+  <link>https://etar125.ru/blog/2025-11-07.html</link>
+  <guid>https://etar125.ru/blog/2025-11-07.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Ну вот, основные разделы сайта успешно перенесены. Осталось совсем немного,
+буду постепенно остальные возвращать.
+</p>
+<p>
+...
+</p>
+<p>
+Купил себе одноплатник от <a href="https://pb-embedded.ru">PB</a> - <code>PB_SBC01_H3</code>.
+Поставил Ubuntu Focal на ужасном systemd, образ которой лежал у них,
+так там походу всё чисто для GUI! А у меня-то второго монитора нет
+(есть, но я им не могу свободно пользоваться), а деньги тратить
+жалко (я школота), поэтому купил USB-TTL. В систему попасть
+я попал, так а тут нужных утилит консольных <i>нет</i> (<code>wpa_supplicant</code>, <code>dhcpcd</code>...).
+Ну как так-то?
+</p>
+<p>
+Короче, качаю сейчас их архив со скриптами для сборки и буду
+собирать либо Alpine, либо Void на musl. Позже может ещё
+прикуплю какой-нибудь экранчик для вывода локального IP.
+А, ещё надо кулер прикупить, а то оно в простое греется 50
+градусов с алюминькой. Жаль, что корпусов под эту плату нет.
+Надо либо искать совместимый/допиливать похожий,
+либо самому измерять и печатать на 3D-принтере,
+либо делать из картона и стяжек. Для меня осуществим только третий
+вариант.
+</p>
+<p>
+У меня на нём будет крутиться локальный FTP-сервак.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Почти готово! (e1sg)]]></title>
+  <link>https://etar125.ru/blog/2025-10-25.html</link>
+  <guid>https://etar125.ru/blog/2025-10-25.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Всё базовое в 1md реализовано, поэтому уже можно внедрить его в e1sg.
+<br>
+Короче, опять поменял стиль + полностью перелапатил CSS,
+теперь выглядит как-то так:
+<br>
+<a href="https://etar125.ru/media/e1sg_2510.jpg"><img src="https://etar125.ru/media/e1sg_2510.jpg" alt="Новый стиль"></a>
+</p>
+<p>
+Также я выложил 1md на GitHub — <a href="https://github.com/etar125/1md">ТЫК</a>.
+<br>
+Мобильная версия сайта скоро будет удалена, перед этим
+сохраню сайт в WebArchive.
+<br>
+Пока не доделаю e1sg и не перелапачу сайт под него,
+писать сюда, скорее всего, ничего не буду.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Первая настоящая статья]]></title>
+  <link>https://etar125.ru/blog/2025-10-12.html</link>
+  <guid>https://etar125.ru/blog/2025-10-12.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Наконец-то появился повод написать первую статью.
+<br>
+Раньше лень было.
+</p>
+<p>
+<a href="https://etar125.ru/articles/aliasingfix.html">Ссылочка</a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Пишу 1md]]></title>
+  <link>https://etar125.ru/blog/2025-10-11.html</link>
+  <guid>https://etar125.ru/blog/2025-10-11.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+<b>1md</b> -- мой транслятор Markdown в HTML. Писать там нечего (почти), поэтому закончу за недельку.
+<br>
+Потом начну доделывать e1sg.
+<br>
+Пока умеет только в заголовки. Выделение параграфов, я, наверное, в самом конце разработки добавлю.
+<br>
+Выложу не скоро (как только e1sg доделаю, может быть).
+</p>
+<p>
+<a href="https://etar125.ru/media/1md_1110.jpg"><img src="https://etar125.ru/media/1md_1110.jpg" alt="Демонстрация"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[e1sg успешно обновлён!]]></title>
+  <link>https://etar125.ru/blog/2025-10-09.html</link>
+  <guid>https://etar125.ru/blog/2025-10-09.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Генератор переписан под новый формат и стиль. Можно заметить, что почему-то зазор у главной части больше, чем должно быть.
+<br>
+Хз, почему так.
+
+<a href="https://etar125.ru/media/e1sg_910.jpg"><img src="https://etar125.ru/media/e1sg_910.jpg" alt="e1sg успех"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Прототип нового дизайна]]></title>
+  <link>https://etar125.ru/blog/2025-10-03_01.html</link>
+  <guid>https://etar125.ru/blog/2025-10-03_01.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Немного пошаманил с ИИшкой, вот такой сайтик получился. В целом меня устраивает, пару моментов ещё в стиле поправлю и начну переписывать e1sg под этот формат.
+</p>
+<p>
+<a href="https://etar125.ru/media/proto_310.jpg"><img src="https://etar125.ru/media/proto_310.jpg" alt="Прототип"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Переделываю дизайн e1sg]]></title>
+  <link>https://etar125.ru/blog/2025-10-03_00.html</link>
+  <guid>https://etar125.ru/blog/2025-10-03_00.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Дизайн получился полное говно, + я хз что не так в стиле. Короче, меняю полностью.
+<br>
+Также, теперь проект называется e1sg — etar125's site generator.
+</p>
+<p>
+<a href="https://etar125.ru/media/e1sg_310.jpg"><img src="https://etar125.ru/media/e1sg_310.jpg" alt="Ужасный дизайн"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Пишу свой веб-фреймворк]]></title>
+  <link>https://etar125.ru/blog/2025-09-28.html</link>
+  <guid>https://etar125.ru/blog/2025-09-28.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+<a href="https://etar125.ru/media/e1wf_289.jpg"><img src="https://etar125.ru/media/e1wf_289.jpg" alt="Результат"></a>
+</p>
+<p>
+Пока всё совсем плохо. Пишу на Tcl, лицензия ISC, публиковать пока что не собираюсь.
+<br>
+Что-то сгенерировало... Ну, спасибо и на этом. Продолжу разрабатывать завтра, только этот пост напишу, спать пора.
+<br>
+А, и проект вдохновлён sw (чекните то ли rocks, то ли other projects на suckless.org).
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Скоро починю стиль]]></title>
+  <link>https://etar125.ru/blog/2025-09-08.html</link>
+  <guid>https://etar125.ru/blog/2025-09-08.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Ну вот и всё, скрипт для загрузки написан, дописан и починен, осталось добавить обработку sed'ом,
+чтобы изображения влезали.
+</p>
+<p>
+...
+</p>
+<p>
+Вроде бы добавил.
+</p>
+<p>
+...
+</p>
+<p>
+Где-то чуть поправил стиль, вроде бы изменил фон, но как-то не заметно. Или я не изменил?
+<br>
+Ну вот margin у pre вернул. Это отголоски стиля от suckless.org.
+</p>
+<p>
+...
+</p>
+<p>
+Ну теперь скрипт точно починен. Также новый стиль применился полностью, и я перенёс его
+на <a href="https://etar125.ru/mob">мобильную версию</a>.
+</p>
+<p>
+P.S. Я ещё раз починил скрипт, теперь вроде на 100%, мобильная версия должна работать нормально.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[NsTinySS 25-0002]]></title>
+  <link>https://etar125.ru/blog/2025-09-03.html</link>
+  <guid>https://etar125.ru/blog/2025-09-03.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Ну вот и началась школа. В последнее время к компьютеру (основному, не домашнему, где я в игры играю) вообще не прикасаюсь (максимум 2-3 часа в день).
+<br>
+В общем, немного дописал-таки спеку, в целом осталось совсем немного, основные требования прописаны, остались только команды и мелочи.
+<br>
+<a href="https://etar125.ru/media/nstinyss_25-0002.jpg"><img src="https://etar125.ru/media/nstinyss_25-0002.jpg" alt="NsTinySS спека, 1-ая страница"></a>
+<br>
+Про стиль: прописал новый цвет фона, вроде бы убрал ненужное от suckless.org, осталось только в скрипт обработки прописать sed для добавления max-width к изображениям. Ну это потом.
+<br>
+Также переписал скрипт для загрузки, и он вроде бы даже нормально отрабатывает! Наличие файлов на серваке и локально конечно не проверяет (чтобы удалить то, чего локально нет), но это не критично - у меня такие случаи редко случаются.
+<br>
+Коротко про поведение - теперь проверяются MD5-хеши.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Мобильная версия]]></title>
+  <link>https://etar125.ru/blog/2025-08-28.html</link>
+  <guid>https://etar125.ru/blog/2025-08-28.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+<a href="https://etar125.ru/mob/">Ссылка</a>
+</p>
+<p>
+Заметил, что сайт почти не читается на мобилках, да и уже несколько
+раз на ПК замечал, что где-то не влезает.
+<br>
+А всё потому что я стиль брал от suckless.org. Короче, пока немного подредачил стиль для мобилок, потом уже и текущий на ПК поправлю.
+<br>
+Там где картинки все ещё не читаемо.
+<br>
+<a href="https://etar125.ru/media/Screenshot_2025-08-28-18-04-57.jpg"><img src="https://etar125.ru/media/Screenshot_2025-08-28-18-04-57.jpg" alt="Было"></a>
+</p>
+<p>
+<a href="https://etar125.ru/media/Screenshot_2025-08-28-19-05-42.jpg"><img src="https://etar125.ru/media/Screenshot_2025-08-28-19-05-42.jpg" alt="Стало"></a>
+</p>
+<p>
+А, ну и мне ещё надо полностью скрипт для загрузки переписывать. Хрень он полная.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Новый язык программирования]]></title>
+  <link>https://etar125.ru/blog/2025-08-27.html</link>
+  <guid>https://etar125.ru/blog/2025-08-27.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Начал делать TinySS 2.0 -- Not So TinySS.
+<br>
+Обратной совместимости с TinySS, к счастью, не будет,
+и, в отличие от TSS, NsTSS имеет +- полноценную спеку.
+<br>
+Вот сейчас занимаюсь её разработкой.
+<br>
+Позже открою исходник под CC BY и переведу на инглиш.
+</p>
+<p>
+<a href="https://etar125.ru/media/spec_dev.jpg"><img src="https://etar125.ru/media/spec_dev.jpg" alt="Разрабатываю спеку"></a>
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Новый стиль]]></title>
+  <link>https://etar125.ru/blog/2025-08-16.html</link>
+  <guid>https://etar125.ru/blog/2025-08-16.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Немного изменил стиль. Теперь шрифт побольше, фон чуть светлее (и теплее), фон ссылок навигации стал очень тёмным синим, сам цвет ссылок теперь светлее и один (раньше был доп. для нажатых).
+<br>
+Было:
+<br>
+<a href="https://etar125.ru/media/before.jpg"><img src="https://etar125.ru/media/before.jpg" alt="Было"></a>
+</p>
+<p>
+Стало:
+<br>
+<a href="https://etar125.ru/media/after.jpg"><img src="https://etar125.ru/media/after.jpg" alt="Стало"></a>
+</p>
+<p>
+Цвет ссылок возможно ещё больше осветлю, писать об этом не буду.
+Старый стиль доступен по ссылке: https://etar125.ru/style.css.old
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[На сайте теперь есть статьи]]></title>
+  <link>https://etar125.ru/blog/2025-08-05.html</link>
+  <guid>https://etar125.ru/blog/2025-08-05.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Решил сделать раздел со статьями. И как оказалось, мой скрипт для автоматической загрузки на сервак не так заливал их.
+<br>
+Поскольку именование .md файлов статей другое (<code>name_date_id.md</code>), пришлось переделать текущую функцию для обработки md.
+<br>
+Название выходного файла .html состоит из одного <code>name</code>.
+<br>
+Ну и ещё исправил выделение жирным цветом раздела сайта. Раньше это не делалось в .html файлах блога и статей.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Блог без JS]]></title>
+  <link>https://etar125.ru/blog/2025-07-29.html</link>
+  <guid>https://etar125.ru/blog/2025-07-29.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Теперь для чтения блога не нужен JS. Я нахожу прошлый вариант в виде некой ленты ущербным, и не понимаю как реализовать отдельные ссылки для каждого поста.
+<br>
+Теперь же каждый пост имеет свою страницу, а index.html хранит ссылки, заголовки и дату в ISO-формате.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Упростил себе жизнь]]></title>
+  <link>https://etar125.ru/blog/2025-07-28.html</link>
+  <guid>https://etar125.ru/blog/2025-07-28.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Ну всё, теперь ещё и загружается на сервак автоматом, не надо в FileZilla лезть.
+<br>
+Также добавил <a href="https://etar125.ru/htmltest.html">HTML Test</a> для проверки стиля.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Блог теперь генерируется автоматически]]></title>
+  <link>https://etar125.ru/blog/2025-07-25.html</link>
+  <guid>https://etar125.ru/blog/2025-07-25.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+Теперь блог генерируется из <i>.md файлов, а также имеет страницы.
+<br>
+Потом сделаю .sh скрипт для загрузки всего блога для браузеров без JS.
+</p>
+</div>]]></description>
+</item>
+
+<item>
+  <title><![CDATA[Сайт теперь генерируется автоматически!]]></title>
+  <link>https://etar125.ru/blog/2025-07-23.html</link>
+  <guid>https://etar125.ru/blog/2025-07-23.html</guid>
+  <description><![CDATA[<div class="blog">
+
+
+<p>
+А если быть точнее, то автоматически генерируется только часть с навигацией, т.к. очень муторно залезать в каждый .html и править её.
+<br>
+Теперь мне надо залезать лишь в несколько HTML. Осталось автоматизировать этот блог и сайт в принципе с помощью cmark-gfm.
+<br>
+Ну а дальше по мелочи: проверка времени изменения .md и .html, чтобы потом автоматом генерировать новый .html и загружать на сервер.
+</p>
+</div>]]></description>
+</item>
+
+</channel>
+</rss>
