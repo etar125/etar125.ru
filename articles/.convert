@@ -155,6 +155,7 @@ close $_sp
 if {[catch {exec {*}$md_handler $dir/spisok.md >> $dir/spisok.html} error_msg]} {
     puts "error while converting $dir/spisok.md: ${error_msg}"
 }
+file delete $dir/spisok.md
 
 set _lp [open $dir/index.html w]
 puts $_lp $lenta
