@@ -163,3 +163,7 @@ file delete $dir/spisok.md
 set _lp [open $dir/index.html w]
 puts $_lp $lenta
 close $_lp
+
+set _rss [open $dir/rss.xml w]
+puts $_rss $rss_feed
+close $_rss
