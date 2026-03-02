@@ -1,189 +1,161 @@
 #!/bin/env tclsh
-# from e1sg.tcl
+# etar125's blog generator for e1sg
 
-foreach f [glob -nocomplain -directory $dir -type f *.md] {
-    if {[lsearch -exact $ignore_convert $f] != -1} { continue }
-    if {$verbose} { puts "converting file $f" }
-    set fname "[file rootname $f].html"
-    set fp [open $fname w]
-    puts $fp "<div class=\"blog\">"
-    close $fp
-    if {[catch {exec {*}$md_handler $f >> $fname} error_msg]} {
-        puts "error while converting ${f}: ${error_msg}"
-    }
-    set fp [open $fname a]
-    puts $fp "</div>"
-    close $fp
-    file delete $f
+set blogname "Мои статьи"
+set bloglink "https://etar125.ru/articles"
+set blogdescription "Просто мои статьи"
+
+if {$verbose} {
+    puts "etar125's blog generator for e1sg"
 }
 
+set spisok "?opt noheaderlink yes
+# $blogname
 
-proc remove_all_links {content} {
-    # Удаляем все теги <a> с любыми атрибутами, оставляя только содержимое
-    while {[regsub {<a[^>]*>(.*?)</a>} $content {\1} content]} {
-        # Продолжаем пока есть теги <a>
-    }
-    return [string trim $content]
-}
+\[RSS Feed\](/$dir/rss.xml)  
+\[В виде ленты\](/$dir/)  
+\[Список тегов\](/$dir/tags.html)
 
-proc clean_h1_and_show {html} {
-    if {[regexp {<h1[^>]*>(.*?)</h1>} $html full_match h1_content]} {
-        # Удаляем все ссылки из содержимого
-        set clean_content [remove_all_links $h1_content]
-        
-        # Создаем чистый h1
-        set new_h1 "<h1>$clean_content</h1>"
-        set result_html [string replace $html [string first $full_match $html] \
-                [expr {[string first $full_match $html] + [string length $full_match] - 1}] \
-                $new_h1]
-        return [list $result_html $clean_content]
-    }
-    return [list $html ""]
-}
+"
 
-proc clean_h3_and_add_class {html} {
-    if {[regexp {<h3[^>]*>(.*?)</h3>} $html full_match h3_content]} {
-        # Удаляем все ссылки из содержимого
-        set clean_content [remove_all_links $h3_content]
-        
-        # Создаем чистый h3 с классом
-        set new_h3 "<h3 class=\"blog-date\">$clean_content</h3>"
-        return [string replace $html [string first $full_match $html] \
-                [expr {[string first $full_match $html] + [string length $full_match] - 1}] \
-                $new_h3]
-    }
-    return $html
-}
+set lenta "<h1>$blogname</h1>
+<p>
+<a href=\"/$dir/rss.xml\">RSS Feed</a><br>
+<a href=\"/$dir/spisok.html\">В виде списка</a><br>
+<a href=\"/$dir/tags.html\">Список тегов</a>
+</p>
+<div class=\"blog\">
+"
 
-proc compare_filenames {a b} {
-    # Извлекаем все компоненты имени
-    regexp {^([^_]+)_(\d{4}-\d{2}-\d{2})_(\d+)\.html$} $a -> prefix_a date_a num_a
-    regexp {^([^_]+)_(\d{4}-\d{2}-\d{2})_(\d+)\.html$} $b -> prefix_b date_b num_b
-    
-    # Сначала сравниваем даты
-    set date_cmp [string compare $date_b $date_a]
-    if {$date_cmp != 0} { return $date_cmp }
-    
-    # Если даты равны, сравниваем префиксы
-    set prefix_cmp [string compare $prefix_b $prefix_a]
-    if {$prefix_cmp != 0} { return $prefix_cmp }
-    
-    # Если префиксы равны, сравниваем номера
-    return [expr {$num_b - $num_a}]
-}
+array set gtags {}
 
-set articles "# Мои статьи\n\n\[RSS Feed\](https://etar125.ru/articles/rss.xml)\n\n"
-foreach f [lsort -command {apply {{a b} {
-    # Берем только имена файлов (без пути)
-    set name_a [file tail $a]
-    set name_b [file tail $b]
-    
-    # Извлекаем даты
-    regexp {(\d{4}-\d{2}-\d{2}_\d{1})} $name_a -> date_a
-    regexp {(\d{4}-\d{2}-\d{2}_\d{1})} $name_b -> date_b
-    
-    # Сравниваем даты
-    string compare $date_b $date_a
-}}} [glob -nocomplain -directory $dir -type f *.html]] {
-    if {[lsearch -exact $ignore_convert $f] != -1} { continue }
-    set fd [open $f r]
-    set html [read $fd]
-    close $fd
-    set first [clean_h1_and_show $html]
-    set second [clean_h3_and_add_class [lindex $first 0]]
-    set names [split [file tail $f] "_"]
-    append articles "\[[lindex $first 1]\]([lindex $names 0].html) [lindex $names 1]  \n"
-    set fd [open [file join $dir "[lindex $names 0].html"] w]
-    puts -nonewline $fd $second
-    close $fd
-    file delete $f
-}
-
-set fname [file join $dir "index.md"]
-
-set fd [open $fname w]
-puts $fd $articles
-close $fd
-
-if {$verbose} {puts "converting file $fname"}
-if {[catch {exec {*}$md_handler $fname > [file rootname $fname].html} error_msg]} {
-    puts "error while converting index.md: ${error_msg}"
-}
-file delete $fname
-
-# От DeepSeek
-
-set rss_file [file join $dir "rss.xml"]
-set fd [open $rss_file w]
-
-puts $fd {<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+set rss_feed "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\">
 <channel>
-<title>Мои статьи</title>
-<link>https:/etar125.ru/articles</link>
-<description>Просто мои статьи</description>
-<language>ru-ru</language>}
+<title>$blogname</title>
+<link>$bloglink</link>
+<description>$blogdescription</description>
+<language>ru-ru</language>
+"
 
-foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.html]] {
-    if {[string match "index.html" [file tail $f]]} { continue }
+foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.md]] {
     if {[lsearch -exact $ignore_convert $f] != -1} { continue }
-    if {$verbose} { puts "adding to rss feed $f" }
-    
-    set fd_html [open $f r]
-    set html_content [read $fd_html]
-    close $fd_html
-    
-    # Извлекаем заголовок H1
-    set title ""
-    if {[regexp {<h1[^>]*>(.*?)</h1>} $html_content -> title_content]} {
-        set title [string trim $title_content]
-    }
-    
-    # Извлекаем дату из H3
-    set date_str ""
-    if {[regexp {<h3 class="blog-date">(.*?)</h3>} $html_content -> date_content]} {
-        set date_str [string trim $date_content]
-    }
-    
-    # Форматируем дату для RSS
-    set pub_date ""
-    if {$date_str ne ""} {
-        # ISO формат: 2025-03-15 или 2025-03-15_12
-        if {[regexp {^(\d{4})-(\d{2})-(\d{2})(?:_(\d{2}))?$} $date_str -> year month day hour]} {
-            if {$hour eq ""} { set hour "00" }
-            set months [list Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec]
-            set month_name [lindex $months [expr {$month - 1}]]
-            set pub_date "$day $month_name $year ${hour}:00:00 GMT"
+    if {$verbose} { puts "  processing & converting file $f" }
+    set root [file rootname $f]
+    set up [read [open $f r]]
+    set new [open ${root}_new.md w]
+    # name {Делаем деньгу}
+    # date {2020-10-10}
+    # или
+    # date {3030-20-20 13:37}
+    # tags {tag1 {tag 2}}
+    set pat yes
+    set chk yes
+    foreach line [split $up "\n"] {
+        if {$chk && $line == "?com e1bloggen"} {
+            puts -nonewline $new "?opt class blog
+?open div
+?opt noheaderlink a
+?opt class post_title
+# $name
+?opt noheaderlink a
+?opt class post_date
+### [exec date -d "$date" "+%d.%m.%Y %H:%M"]
+?opt class post_tags
+?open span
+Теги: "
+            foreach tag $tags {
+                puts $new "\[$tag\](/$dir/$tag.html)"
+            }
+            puts $new "?close span
+?com e1bloggen header end\n\n"
+            append spisok "\[$name\](/$dir/${root}.html) $date  \n"
+            foreach tag $tags {
+                append gtags($tag) "\[$name\](/$dir/${root}.html) $date  \n"
+            }
+            set pat no
+            set chk no
+            continue
+        }
+        if {$pat} {
+            eval "set $line"
+        } else {
+            puts -nonewline $new $line
         }
     }
     
-    # Извлекаем ID из имени файла для guid
-    set file_id [file rootname [file tail $f]]
-    set guid "https://etar125.ru/articles/$file_id.html"
+    puts -nonewline $new "\n?close div\n"
+    close $new
     
-    # Удаляем H1 и H3 из контента
-    regsub {<h1[^>]*>.*?</h1>} $html_content "" html_content
-    regsub {<h3 class="blog-date">.*?</h3>} $html_content "" html_content
-    
-    # Очищаем лишние пробелы и переносы
-    set html_content [string trim $html_content]
-    
-    # Формируем описание (всё содержимое кроме H1 и H3)
-    set description [string map {< < > > & &} $html_content]
-    
-    puts $fd "\n<item>"
-    puts $fd "  <title><!\[CDATA\[$title\]\]></title>"
-    puts $fd "  <link>$guid</link>"
-    puts $fd "  <guid>$guid</guid>"
-    if {$pub_date ne ""} {
-        puts $fd "  <pubDate>$pub_date</pubDate>"
+    if {[catch {exec {*}$md_handler ${root}_new.md >> ${root}.html} error_msg]} {
+        puts "error while converting ${root}_new.md: ${error_msg}"
+        continue
     }
-    puts $fd "  <description><!\[CDATA\[$description\]\]></description>"
-    puts $fd "</item>"
+    
+    file delete $f
+    file delete ${root}_new.md
+    
+    set fhp [open ${root}.html r]
+    set fh [read $fhp]
+    close $fhp
+    set sv {}
+    
+    set sh no
+    
+    foreach line [split $fh "\n"] {
+        if {!$sh} {
+            if {$line == "<!--e1bloggen header end-->"} {
+                set sh yes
+            }
+        } else {
+            append sv "$line\n"
+        }
+    }
+    
+    append rss_feed "<item>
+  <title><!\[CDATA\[$name\]\]></title>
+  <link>$bloglink/${root}.html</link>
+  <guid>$bloglink/${root}.html</guid>
+  <pubDate>[exec date -d "$date" -R]</pubDate>
+  <description><!\[CDATA\[$sv\]\]></description>
+</item>
+"
+    append lenta "<hr>
+$fh
+"
 }
 
-puts $fd "\n</channel>\n</rss>"
-close $fd
+if {$verbose} {
+    puts "tags:"
+}
 
-if {$verbose} { puts "rss feed created: $rss_file" }
+set tgs [open $dir/tags.html w]
+
+foreach tag [array names gtags] {
+    if {$verbose} {
+        puts "  $tag"
+    }
+    set fp [open $dir/$tag.md w]
+    puts $fp "# Тег $tag\n"
+    puts $fp $gtags($tag)
+    close $fp
+    if {[catch {exec {*}$md_handler $dir/$tag.md >> $dir/$tag.html} error_msg]} {
+        puts "error while converting $dir/$tag.md: ${error_msg}"
+        continue
+    }
+    file delete $dir/$tag.md
+    puts $tgs "<a href=\"/$dir/$tag.html\">$tag</a>"
+}
+
+close $tgs
+
+set _sp [open $dir/spisok.md w]
+puts $_sp $spisok
+close $_sp
+if {[catch {exec {*}$md_handler $dir/spisok.md >> $dir/spisok.html} error_msg]} {
+    puts "error while converting $dir/spisok.md: ${error_msg}"
+}
+
+set _lp [open $dir/index.html w]
+puts $_lp $lenta
+close $_lp
