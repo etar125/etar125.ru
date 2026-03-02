@@ -24,7 +24,6 @@ set lenta "<h1>$blogname</h1>
 <a href=\"/$dir/spisok.html\">В виде списка</a><br>
 <a href=\"/$dir/tags.html\">Список тегов</a>
 </p>
-<div class=\"blog\">
 "
 
 array set gtags {}
@@ -53,22 +52,26 @@ foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.m
     set chk yes
     foreach line [split $up "\n"] {
         if {$chk && $line == "?com e1bloggen"} {
-            puts -nonewline $new "?opt class blog
+            puts $new "?opt class blog
 ?open div
 ?opt noheaderlink a
 ?opt class post_title
 # $name
 ?opt noheaderlink a
 ?opt class post_date
-### [exec date -d "$date" "+%d.%m.%Y %H:%M"]
-?opt class post_tags
+### [exec date -d "$date" "+%d.%m.%Y %H:%M"]"
+            set ota no
+            foreach tag $tags {
+                if {!$ota} {
+                    set ota yes
+                    puts -nonewline $new "?opt class post_tags
 ?open span
 Теги: "
-            foreach tag $tags {
+                }
                 puts $new "\[$tag\](/$dir/$tag.html)"
             }
-            puts $new "?close span
-?com e1bloggen header end\n\n"
+            if {$ota} { puts $new "?close span" }
+            puts $new "?com e1bloggen header end\n\n"
             append spisok "\[$name\](/$dir/${root}.html) $date  \n"
             foreach tag $tags {
                 append gtags($tag) "\[$name\](/$dir/${root}.html) $date  \n"
@@ -80,7 +83,7 @@ foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.m
         if {$pat} {
             eval "set $line"
         } else {
-            puts -nonewline $new $line
+            puts $new $line
         }
     }
     

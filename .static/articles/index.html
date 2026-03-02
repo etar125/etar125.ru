@@ -43,34 +43,44 @@
 <a href="/articles/spisok.html">В виде списка</a><br>
 <a href="/articles/tags.html">Список тегов</a>
 </p>
-<div class="blog">
 <hr>
 <div class="blog">
 <h1 class="post_title" id="Тестовая_статья">Тестовая статья</h1>
 <h3 class="post_date" id="05-08-2025_00:00">05.08.2025 00:00</h3>
-<span class="post_tags">
-<p>
-Теги: ?close span
 <!--e1bloggen header end-->
-</p>
 <p>
 Привет. Это тестовая статья.
-</div>
 </p>
+</div>
 
 <hr>
 <div class="blog">
 <h1 class="post_title" id="Фиксим_сглаживание_в_Java_Swing_приложениях">Фиксим сглаживание в Java Swing приложениях</h1>
 <h3 class="post_date" id="12-10-2025_00:00">12.10.2025 00:00</h3>
-<span class="post_tags">
-<p>
-Теги: ?close span
 <!--e1bloggen header end-->
+<p>
+Захотел поиграть в infdev и alpha Minecraft, и скачал себе Betacraft.
+<br>
+Запускаю, а тут такая картина:
 </p>
 <p>
-Захотел поиграть в infdev и alpha Minecraft, и скачал себе Betacraft.  Запускаю, а тут такая картина:  <a href="https://etar125.ru/media/bcb_1210.jpg"><img src="https://etar125.ru/media/bcb_1210.jpg" alt="Несглаженный текст"></a>Решается всё очень просто: добавьте к параметрам запуска (перед -jar) <code>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true</code>.  Чтобы постоянно это не прописывать, добавьте в свой <code>.bashrc</code>:<code></code><code>export _JAVA_OPTIONS=&quot;-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true&quot;</code><code></code>Результат:  <a href="https://etar125.ru/media/bca_1210.jpg"><img src="https://etar125.ru/media/bca_1210.jpg" alt="Сглаженный текст"></a>
-</div>
+<a href="https://etar125.ru/media/bcb_1210.jpg"><img src="https://etar125.ru/media/bcb_1210.jpg" alt="Несглаженный текст"></a>
 </p>
+<p>
+Решается всё очень просто: добавьте к параметрам запуска (перед -jar) <code>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true</code>.
+<br>
+Чтобы постоянно это не прописывать, добавьте в свой <code>.bashrc</code>:
+</p>
+<pre><code>
+export _JAVA_OPTIONS=&quot;-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true&quot;
+</code></pre>
+<p>
+Результат:
+</p>
+<p>
+<a href="https://etar125.ru/media/bca_1210.jpg"><img src="https://etar125.ru/media/bca_1210.jpg" alt="Сглаженный текст"></a>
+</p>
+</div>
 
 
 
