@@ -128,6 +128,9 @@ $fh
 "
 }
 
+append rss_feed "</channel>
+</rss>"
+
 if {$verbose} {
     puts "tags:"
 }
