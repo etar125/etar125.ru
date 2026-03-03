@@ -6,6 +6,20 @@
 <description>Просто мой блог</description>
 <language>ru-ru</language>
 <item>
+  <title><![CDATA[Новый генератор блога]]></title>
+  <link>https://etar125.ru/blog/blog/2026-03-03.html</link>
+  <guid>https://etar125.ru/blog/blog/2026-03-03.html</guid>
+  <pubDate>Tue, 03 Mar 2026 07:25:00 +0300</pubDate>
+  <description><![CDATA[<p>
+Наконец переписал генератор блога.
+<br>
+Теги к постам позже добавлю.
+</p>
+</div>
+
+]]></description>
+</item>
+<item>
   <title><![CDATA[RSS-лента]]></title>
   <link>https://etar125.ru/blog/blog/2026-02-09.html</link>
   <guid>https://etar125.ru/blog/blog/2026-02-09.html</guid>
