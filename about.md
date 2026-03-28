@@ -1,6 +1,6 @@
 # Обо мне
 
-Я **Медведев Евгений**, псевдонимы: **etar125** (Admanse), Enerphis, liden, InnieSharp, indev, Fonechi,
+Я **Медведев Евгений**, псевдонимы: **etar125** (Admanse), **tutrak2**, Enerphis, liden, InnieSharp, indev, Fonechi,
 XTechi, Varinosik, may75k/may7k и др.  
 
 Под Linux пишу основной софт на C, гуишный на Tcl/Tk, скриптики на Tcl, Bash, POSIX Shell.  
@@ -10,10 +10,10 @@ XTechi, Varinosik, may75k/may7k и др.
 За всю свою жизнь кое-как (возможно неполностью) **реализовал** более 150 проектов.  
 Учил я вообще много языков, вот те, на которых я что-то написал:
 C#, C++, C, Python, Bash/sh, Tcl, Java, PHP, Lua, VB.NET, VBScript, Windows Batch, Pascal.  
-Из игр люблю Team Fortress 2, старую-добрую CS:GO, Minecraft (но не новый, который после 1.20), POLYGON (можно сказать олд),
+Из игр люблю Team Fortress 2, старую-добрую CS:GO, Minecraft (но не новый, который после 1.20), POLYGON (можно сказать олд, хотя я где-то в 2022 забросил и вернулся спустя года 3),
 Banana Shooter & Pixel Strike 3D (любил давно, испортили пздц обе игры), Red Match 2, Sector's Edge (прекрасная игра,
 надеюсь ещё вернётся), Dishonored 1 (возможно и 2), Watch Dogs обе первые части, Far Cry 3 (+ Blood Dragon) и 5 (+ New Dawn),
-Unturned...  
+Unturned... S.T.A.L.K.E.R. ТЧ (другие не очень)...  
 Вот недавно начал изучать Minetest (сейчас он Luanti), играю на каком-то серваке с VoxeLibre, название "2b2t", ip "roonix.ddns" чё-то там.  
 О, и ещё, я Братишкина смотрю.
 
@@ -25,7 +25,7 @@ Unturned...
 **RAM**: 8GBx1 DDR3  
 **SSD**: 120GBx2  
 **OS**: Void Linux glibc  
-**WM**: JWM  
-Обоина WinXP Autumn.
+**WM**: i3 (на XLibre)  
+Обоина - WinXP Autumn.
 
-!![Рабочий стол](https://etar125.ru/media/desktop_new.jpg)
+!![Рабочий стол](https://etar125.ru/media/newdesk.jpg)
