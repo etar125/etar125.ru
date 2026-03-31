@@ -4,6 +4,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    background-image: url("https://etar125.ru/media/stripe_bg3.jpg");
 }
 
 code {
@@ -11,10 +12,15 @@ code {
     word-break: break-all;
 }
 
-#logo {
-    color: #000;
-    width: 100%;
+.header {
     background-color: #B4F6FF;
+    background-image: url("https://etar125.ru/media/stripe_bg_logo.jpg");
+    font-family: serif;
+    width: 100%;
+    color: #ffffff;
+}
+
+#logo {
     font-size: 1.15em;
 }
 
@@ -24,11 +30,9 @@ code {
 }
 
 #nav {
-    width: 100%;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: #B4F6FF;
 }
 
 #nav ul {
@@ -42,17 +46,17 @@ code {
 
 #nav a {
     text-decoration: none;
-    background-color: #82DEEB;
+    /*background-color: #2D8781;*/
     margin-left: 5px;
-    color: #000;
+    color: #ffffff;
 }
 
 #nav a:hover {
-    color: #fff !important;
+    text-decoration: revert;
 }
 
 #nav a:visited {
-    color: #000;
+    color: #ffffff;
 }
 
 #main {
@@ -103,4 +107,89 @@ a.header-link:hover {
     overflow-wrap: break-word;
     word-break: normal;
     hyphens: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+th {
+    font-style: bold;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: #2d2d2d;
+    margin: 2em 0;
+}
+
+q {
+    font-style: italic;
+    color: #82DEEB;
+    padding: 2px 6px;
+}
+
+blockquote {
+    margin: 1.5em 0;
+    padding: 1.2em 2em;
+    border-left: 4px solid #82DEEB;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    position: relative;
+}
+
+
+input[type="checkbox"] {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0 8px 0 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #82DEEB;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #82DEEB;
+    border-color: #82DEEB;
+    position: relative;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    position: absolute;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+p + p {
+    margin-top: 1.1em;
 }

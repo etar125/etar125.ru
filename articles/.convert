@@ -72,9 +72,9 @@ foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.m
             }
             if {$ota} { puts $new "?close span" }
             puts $new "?com e1bloggen header end\n\n"
-            append spisok "\[$name\](/$dir/${root}.html) $date  \n"
+            append spisok "\[$name\](/$dir/[file tail ${root}].html) $date  \n"
             foreach tag $tags {
-                append gtags($tag) "\[$name\](/$dir/${root}.html) $date  \n"
+                append gtags($tag) "\[$name\](/$dir/[file tail ${root}].html) $date  \n"
             }
             set pat no
             set chk no
