@@ -1,10 +1,10 @@
 body {
-    background-color: #000;
+    background-color: #121212;
     color: #fff;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background-image: url("https://etar125.ru/media/stripe_bg3.jpg");
+    /*background-image: url("https://etar125.ru/media/stripe_bg3.jpg");*/
 }
 
 code {
@@ -13,8 +13,8 @@ code {
 }
 
 .header {
-    background-color: #B4F6FF;
-    background-image: url("https://etar125.ru/media/stripe_bg_logo.jpg");
+    background-color: #65A29D;
+    /*background-image: url("https://etar125.ru/media/stripe_bg_logo.jpg");*/
     font-family: serif;
     width: 100%;
     color: #ffffff;
