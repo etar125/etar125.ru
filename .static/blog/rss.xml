@@ -6,6 +6,20 @@
 <description>Просто мой блог</description>
 <language>ru-ru</language>
 <item>
+  <title><![CDATA[elist 0.2.0]]></title>
+  <link>https://etar125.ru/blog/blog/2026-04-08.html</link>
+  <guid>https://etar125.ru/blog/blog/2026-04-08.html</guid>
+  <pubDate>Tue, 07 Apr 2026 21:47:00 +0300</pubDate>
+  <description><![CDATA[</p>
+<p>
+Ну, функцию для записи списка реализовал, другие реализаю, когда время свободное будет.
+Можно теперь начать работать над пакетным менеджером.
+</p>
+</div>
+
+]]></description>
+</item>
+<item>
   <title><![CDATA[Новый проект]]></title>
   <link>https://etar125.ru/blog/blog/2026-04-07.html</link>
   <guid>https://etar125.ru/blog/blog/2026-04-07.html</guid>
