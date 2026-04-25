@@ -1,4 +1,5 @@
-# X
+
+?raw +h 1 X
 
 ## Среды рабочего стола
 
@@ -38,7 +39,7 @@
 [Mutter](https://mutter.gnome.org/)
 [Muffin](https://github.com/linuxmint/muffin)
 [Marco](https://wiki.mate-desktop.org/mate-desktop/components/marco/)
-[Xfwm](https://wiki.archlinux.org/title/Xfwm_(Русский))
+[Xfwm](https://wiki.archlinux.org/title/Xfwm)
 [KWin](https://ru.wikipedia.org/wiki/KWin)
 [Openbox](https://openbox.org/)
 [blackbox](https://github.com/bbidulock/blackboxwm)
