@@ -9,8 +9,7 @@ if {$verbose} {
     puts "etar125's blog generator for e1sg"
 }
 
-set spisok "?opt noheaderlink yes
-# $blogname
+set spisok "# $blogname
 
 \[RSS Feed\](/$dir/rss.xml)  
 \[В виде ленты\](/$dir/)  
@@ -54,23 +53,26 @@ foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.m
         if {$chk && $line == "?com e1bloggen"} {
             puts $new "?opt class blog
 ?open div
-?opt noheaderlink a
 ?opt class post_title
+
 # $name
-?opt noheaderlink a
+
 ?opt class post_date
 ### [exec date -d "$date" "+%d.%m.%Y %H:%M"]"
             set ota no
             foreach tag $tags {
                 if {!$ota} {
                     set ota yes
-                    puts -nonewline $new "?opt class post_tags
+                    puts -nonewline $new "
+?opt class post_tags
 ?open span
+
 Теги: "
                 }
                 puts $new "\[$tag\](/$dir/$tag.html)"
             }
-            if {$ota} { puts $new "?close span" }
+            if {$ota} { puts $new "
+?close span" }
             puts $new "?com e1bloggen header end\n\n"
             append spisok "\[$name\](/$dir/[file tail ${root}].html) $date  \n"
             foreach tag $tags {

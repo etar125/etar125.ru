@@ -10,9 +10,7 @@
   <link>https://etar125.ru/articles/articles/test_2025-08-05_1.html</link>
   <guid>https://etar125.ru/articles/articles/test_2025-08-05_1.html</guid>
   <pubDate>Tue, 05 Aug 2025 00:00:00 +0300</pubDate>
-  <description><![CDATA[<p>
-Привет. Это тестовая статья.
-</p>
+  <description><![CDATA[<p>Привет. Это тестовая статья.</p>
 </div>
 
 ]]></description>
@@ -22,28 +20,16 @@
   <link>https://etar125.ru/articles/articles/aliasingfix_2025-10-12_1.html</link>
   <guid>https://etar125.ru/articles/articles/aliasingfix_2025-10-12_1.html</guid>
   <pubDate>Sun, 12 Oct 2025 00:00:00 +0300</pubDate>
-  <description><![CDATA[<p>
-Захотел поиграть в infdev и alpha Minecraft, и скачал себе Betacraft.
-<br>
-Запускаю, а тут такая картина:
-</p>
-<p>
-<a href="https://etar125.ru/media/bcb_1210.jpg"><img src="https://etar125.ru/media/bcb_1210.jpg" alt="Несглаженный текст"></a>
-</p>
-<p>
-Решается всё очень просто: добавьте к параметрам запуска (перед -jar) <code>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true</code>.
-<br>
+  <description><![CDATA[<p>Захотел поиграть в infdev и alpha Minecraft, и скачал себе Betacraft.<br>
+Запускаю, а тут такая картина:</p>
+<p><a href="https://etar125.ru/media/bcb_1210.jpg"><img src="https://etar125.ru/media/bcb_1210.jpg" alt="Несглаженный текст"></a></p>
+<p>Решается всё очень просто: добавьте к параметрам запуска (перед -jar) <code>-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true</code>.<br>
 Чтобы постоянно это не прописывать, добавьте в свой <code>.bashrc</code>:
-</p>
-<pre><code>
+<code></code><code>
 export _JAVA_OPTIONS=&quot;-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true&quot;
-</code></pre>
-<p>
-Результат:
-</p>
-<p>
-<a href="https://etar125.ru/media/bca_1210.jpg"><img src="https://etar125.ru/media/bca_1210.jpg" alt="Сглаженный текст"></a>
-</p>
+</code><code></code></p>
+<p>Результат:</p>
+<p><a href="https://etar125.ru/media/bca_1210.jpg"><img src="https://etar125.ru/media/bca_1210.jpg" alt="Сглаженный текст"></a></p>
 </div>
 
 ]]></description>
