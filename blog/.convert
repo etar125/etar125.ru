@@ -1,19 +1,21 @@
 #!/bin/env tclsh
 # etar125's blog generator for e1sg
+# v0.26.5_9
+
+set version "0.26.5_9"
 
 set blogname "Мой блог"
 set bloglink "https://etar125.ru/blog"
 set blogdescription "Просто мой блог"
 
 if {$verbose} {
-    puts "etar125's blog generator for e1sg"
+    puts "etar125's blog generator for e1sg v$version"
 }
 
 set spisok "# $blogname
 
 \[RSS Feed\](/$dir/rss.xml)  
 \[В виде ленты\](/$dir/)  
-\[Список тегов\](/$dir/tags.html)
 
 "
 
@@ -21,11 +23,9 @@ set lenta "<h1>$blogname</h1>
 <p>
 <a href=\"/$dir/rss.xml\">RSS Feed</a><br>
 <a href=\"/$dir/spisok.html\">В виде списка</a><br>
-<a href=\"/$dir/tags.html\">Список тегов</a>
 </p>
+<div class=\"blog\">
 "
-
-array set gtags {}
 
 set rss_feed "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\">
@@ -42,120 +42,97 @@ foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.m
     set root [file rootname $f]
     set up [read [open $f r]]
     set new [open ${root}_new.md w]
-    # name {Делаем деньгу}
-    # date {2020-10-10}
-    # или
-    # date {3030-20-20 13:37}
-    # tags {tag1 {tag 2}}
-    set pat yes
-    set chk yes
+    
+    set err no
+
+    # id_date_name or id_name
+    # 1_first
+    # 125_2026-03-13_bye
+    set rootps [split $root "_"]
+    set newroot [lindex $rootps end]
+
+    set name ${newroot}
+    set date "-"
+    set pdate "-"
+
+    set hasname no
+    set hasdate no
+
+    puts $new "?opt class blog
+?open div"
+    
     foreach line [split $up "\n"] {
-        if {$chk && $line == "?com e1bloggen"} {
-            puts $new "?opt class blog
-?open div
-?opt class post_title
-
-# $name
-
-?opt class post_date
-### [exec date -d "$date" "+%d.%m.%Y %H:%M"]"
-            set ota no
-            foreach tag $tags {
-                if {!$ota} {
-                    set ota yes
-                    puts -nonewline $new "
-?opt class post_tags
+        if {!$hasname && [lindex $line 0] == "#"} {
+            puts $new "?opt class post-title
 ?open span
+$line
 
-Теги: "
-                }
-                puts $new "\[$tag\](/$dir/$tag.html)"
+?close span"
+            set name [string range $line 2 end]
+            set hasname yes
+        } elseif {!$hasdate && [lindex $line 0] == "###"} {
+            set date [string range $line 4 end]
+            set pdate $date
+            if {[catch {set date [exec date -d "$date" "+%d.%m.%Y %H:%M"]}]} {
+                puts "error while processing ${f}: incorrect date"
+                set err yes
+                break
             }
-            if {$ota} { puts $new "
-?close span" }
-            puts $new "?com e1bloggen header end\n\n"
-            append spisok "\[$name\](/$dir/[file tail ${root}].html) $date  \n"
-            foreach tag $tags {
-                append gtags($tag) "\[$name\](/$dir/[file tail ${root}].html) $date  \n"
-            }
-            set pat no
-            set chk no
-            continue
-        }
-        if {$pat} {
-            eval "set $line"
-        } else {
-            puts $new $line
-        }
+            puts $new "?opt class post-date
+?open span
+### $date
+
+?close span"
+            set hasdate yes
+        } else { puts $new $line }
+    }
+
+    puts $new "
+?close div"
+
+    close $new
+
+    if {!$err && $date == "-"} {
+        puts "error while processing ${f}: no date"
+        set err yes
     }
     
-    puts -nonewline $new "\n?close div\n"
-    close $new
-    
-    if {[catch {exec {*}$md_handler ${root}_new.md >> ${root}.html} error_msg]} {
+    if {!$err && [catch {exec {*}$md_handler ${root}_new.md >> $dir/${newroot}.html} error_msg]} {
         puts "error while converting ${root}_new.md: ${error_msg}"
-        continue
+        set err yes
     }
     
     file delete $f
     file delete ${root}_new.md
+
+    if {$err} { continue }
     
-    set fhp [open ${root}.html r]
+    set fhp [open $dir/${newroot}.html r]
     set fh [read $fhp]
     close $fhp
-    set sv {}
-    
-    set sh no
-    
-    foreach line [split $fh "\n"] {
-        if {!$sh} {
-            if {$line == "<!--e1bloggen header end-->"} {
-                set sh yes
-            }
-        } else {
-            append sv "$line\n"
-        }
-    }
+    set sv [split $fh "\n"]
+    set fh [join [lrange $sv 1 end-2] "\n"]
+    set fh2 [join [lrange $sv 7 end-2] "\n"]
     
     append rss_feed "<item>
   <title><!\[CDATA\[$name\]\]></title>
-  <link>$bloglink/${root}.html</link>
-  <guid>$bloglink/${root}.html</guid>
-  <pubDate>[exec date -d "$date" -R]</pubDate>
-  <description><!\[CDATA\[$sv\]\]></description>
+  <link>$bloglink/${newroot}.html</link>
+  <guid>$bloglink/${newroot}.html</guid>
+  <pubDate>[exec date -d "$pdate" -R]</pubDate>
+  <description><!\[CDATA\[$fh2\]\]></description>
 </item>
 "
     append lenta "<hr>
 $fh
 "
+    append spisok "\[$name\]($bloglink/${newroot}.html)  
+"
 }
+
+append lenta "</div>"
 
 append rss_feed "</channel>
 </rss>"
-
-if {$verbose} {
-    puts "tags:"
-}
-
-set tgs [open $dir/tags.html w]
-
-foreach tag [array names gtags] {
-    if {$verbose} {
-        puts "  $tag"
-    }
-    set fp [open $dir/$tag.md w]
-    puts $fp "# Тег $tag\n"
-    puts $fp $gtags($tag)
-    close $fp
-    if {[catch {exec {*}$md_handler $dir/$tag.md >> $dir/$tag.html} error_msg]} {
-        puts "error while converting $dir/$tag.md: ${error_msg}"
-        continue
-    }
-    file delete $dir/$tag.md
-    puts $tgs "<a href=\"/$dir/$tag.html\">$tag</a>"
-}
-
-close $tgs
 
 set _sp [open $dir/spisok.md w]
 puts $_sp $spisok

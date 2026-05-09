@@ -37,26 +37,11 @@ if {[file exists ".static"]} {
 }
 file mkdir .static
 foreach file [glob -nocomplain * .*] {
-  #   if {$file == "e1sg.conf" || $file == ".static" ||
-		# $file == "." || $file == ".." || $file == ".git" ||
-		# $file == "e1sg.tcl" || $file == ".gitignore" ||
-		# $file == "script.sh"} { continue }
 	if {[lsearch -exact $ignore_copy $file] >= 0} { continue }
     file copy -force $file .static/
 }
 cd .static
 
-# Converting all .md files to .html
-
-# proc exec_file {path} {
-# 	if {[file isfile $path]} {
-# 		if {[catch {exec $path} error_msg]} {
-# 			puts stderr "${path} error: ${error_msg}"
-# 		}
-# 	} else {
-# 		puts "${path} isn't a file"
-# 	}
-# }
 
 proc convert_dir {dir} {
 	global ignore_convert md_handler verbose
@@ -216,12 +201,6 @@ proc process_dir {dir} {
 		set c_aliases [list {*}$aliases {*}$new_aliases]
 		set vname [get_vname $c_aliases $f]
 		set new_data [string map [list "<<section>>" $vname "<<main>>" ${data}] $new_data]
-# 		if {$dir == "" && $f == "index.html"} {
-# 			set new_data [string map [list "<<misc>>" "<p>Сайт собран с помощью <a href=\"https://github.com/etar125/etar125.ru\">e1sg</a> и <a href=\"https://github.com/etar125/1md\">1md</a>.<br>
-# Дата сборки: <code>[exec date "+%F %R (%:z)"]</code></p>"] $new_data]
-# 		} else {
-# 			set new_data [string map [list "<<misc>>" ""] $new_data]
-# 		}
 		set fp [open $f w]
 		puts -nonewline $fp $new_data
 		close $fp
@@ -255,20 +234,6 @@ puts $fp "Сайт собран с помощью <a href=\"https://github.com/e
 close $fp
 
 process_dir ""
-
-# foreach f [concat [glob -nocomplain -tails -path [file join * *] *.html] [glob -nocomplain -type f *.html]] {
-# 	puts "processing file ${f}"
-# 	if {[lsearch -exact $ignore $f] != -1} { continue }
-# 	set fp [open $f r]
-# 	set data [read $fp]
-# 	close $fp
-# 	set new_data $html_body
-# 	set new_data [string map [list "<<section>>" [get_vname $aliases $f] "<<main>>" ${data}] $new_data]
-# 	set fp [open $f w]
-# 	puts -nonewline $fp $new_data
-# 	# puts "--- old data ---\n\n${data}\n\n--- new data --- \n\n${new_data}\n\n--- end ---"
-# 	close $fp
-# }
 
 if {$start_server} {
 	puts "starting server"

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>etar125.ru:e1sg</title>
+<title>etar125.ru:blog</title>
 <link rel="stylesheet" type="text/css" href="/style.css">
 <!-- Creative Commons BY 4.0 License Metadata -->
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.ru">
@@ -16,7 +16,7 @@
 <body>
 <div class="header">
 <div id="logo">
-<span id="name">etar125.ru:e1sg</span>
+<span id="name">etar125.ru:blog</span>
 </div>
 <div id="nav">
 <ul>
@@ -41,10 +41,18 @@
 </div>
 
 <div id="main">
-Сайт собран с помощью <a href="https://github.com/etar125/etar125.ru">e1sg</a>.<br>
-Дата сборки: <code>2026-05-09 21:11 MSK</code><br>
-Версия e1sg: <code>0.26.3_31</code><br>
-Обработчик Markdown: <code>n1md</code>
+<div class="blog">
+<span class="post-title">
+<h1>На сайте теперь есть статьи</h1>
+</span>
+<span class="post-date">
+<h3>05.08.2025 00:00</h3>
+</span>
+<p>Решил сделать раздел со статьями. И как оказалось, мой скрипт для автоматической загрузки на сервак не так заливал их.<br>
+Поскольку именование .md файлов статей другое (<code>name_date_id.md</code>), пришлось переделать текущую функцию для обработки md.<br>
+Название выходного файла .html состоит из одного <code>name</code>.<br>
+Ну и ещё исправил выделение жирным цветом раздела сайта. Раньше это не делалось в .html файлах блога и статей.</p>
+</div>
 
 </div>
 <div id="footer">
