@@ -6,6 +6,17 @@
 <description>Просто мой блог</description>
 <language>ru-ru</language>
 <item>
+  <title><![CDATA[Делается новый генератор сайта]]></title>
+  <link>https://etar125.ru/blog/plani-9.html</link>
+  <guid>https://etar125.ru/blog/plani-9.html</guid>
+  <pubDate>Wed, 13 May 2026 20:47:00 +0300</pubDate>
+  <description><![CDATA[<p>Пишу по-тихоньку новый генератор сайта на чистом C89, что-то да получается.
+Выложу на GitHub после того, как сайт будет под него переделан.<br>
+Сразу скажу - концепция у него другая.</p>
+<p>P.S. Неожиданно, но он возможно без использования e1l будет. Ну это
+пока что.</p>]]></description>
+</item>
+<item>
   <title><![CDATA[Переделал генератор блога, будущее сайта]]></title>
   <link>https://etar125.ru/blog/plani-8.html</link>
   <guid>https://etar125.ru/blog/plani-8.html</guid>
