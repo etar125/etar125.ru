@@ -6,6 +6,17 @@
 <description>Просто мой блог</description>
 <language>ru-ru</language>
 <item>
+  <title><![CDATA[Первая версия C Site Generator]]></title>
+  <link>https://etar125.ru/blog/ssgc-1.html</link>
+  <guid>https://etar125.ru/blog/ssgc-1.html</guid>
+  <pubDate>Sun, 17 May 2026 21:00:00 +0300</pubDate>
+  <description><![CDATA[<p>Спустя несколько дней наконец написал полностью рабочий ssgc
+без утечек памяти. Щас буду доделывать, на 0.3.0 скорее всего
+начну сайт этот переделывать. Вот кстати тестовый foo.org
+(открыт в w3m):</p>
+<p><a href="/media/ssgc1.jpg"><img src="/media/ssgc1.jpg" alt="foo.org"></a></p>]]></description>
+</item>
+<item>
   <title><![CDATA[Делается новый генератор сайта]]></title>
   <link>https://etar125.ru/blog/plani-9.html</link>
   <guid>https://etar125.ru/blog/plani-9.html</guid>
