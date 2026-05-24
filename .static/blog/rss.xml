@@ -6,6 +6,15 @@
 <description>Просто мой блог</description>
 <language>ru-ru</language>
 <item>
+  <title><![CDATA[C Site Generator #2]]></title>
+  <link>https://etar125.ru/blog/ssgc-2.html</link>
+  <guid>https://etar125.ru/blog/ssgc-2.html</guid>
+  <pubDate>Sun, 24 May 2026 19:00:00 +0300</pubDate>
+  <description><![CDATA[<p>Начал делать сейчас 0.2.0 (до этого как всегда бездельничал <code>:D</code>). Решил короче избавиться от config.h и начал внедрять конфиг на основе elist.
+Сейчас переписываю main.c (сделал самое муторное сегодня - обработку ошибок), потом чуть-чуть доработаю ssgc.c, дабы проверить, компилируется ли.
+Ну а там уже не так уж и много остаётся сделать. Думаю, нужное для сайта таки на 0.3.0 оставлю.</p>]]></description>
+</item>
+<item>
   <title><![CDATA[Первая версия C Site Generator]]></title>
   <link>https://etar125.ru/blog/ssgc-1.html</link>
   <guid>https://etar125.ru/blog/ssgc-1.html</guid>
