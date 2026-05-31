@@ -1,8 +1,4 @@
 script.sh
 .env
 .ftpauto
-.static/.ftpauto
-.static/ftpauto.sh
-.static/.env
-.static/.script
 .script

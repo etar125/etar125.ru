@@ -6,3 +6,6 @@ cp ftpauto.sh .static/
 cp .env .static/
 cd .static
 ./ftpauto.sh
+mv .ftpauto ../
+cd ..
+rm -r .static
