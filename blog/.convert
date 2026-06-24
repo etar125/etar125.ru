@@ -64,10 +64,9 @@ foreach f [lsort -decreasing -dict [glob -nocomplain -directory $dir -type f *.m
     foreach line [split $up "\n"] {
         if {!$hasname && [lindex $line 0] == "#"} {
             puts $new "?opt class post-title
-?open span
 $line
 
-?close span"
+"
             set name [string range $line 2 end]
             set hasname yes
         } elseif {!$hasdate && [lindex $line 0] == "###"} {
@@ -79,10 +78,9 @@ $line
                 break
             }
             puts $new "?opt class post-date
-?open span
 ### $date
 
-?close span"
+"
             set hasdate yes
         } else { puts $new $line }
     }

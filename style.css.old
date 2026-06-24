@@ -1,0 +1,111 @@
+body {
+    background-color: #010101;
+    color: #efefef;
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+pre {
+    margin: 0;
+}
+
+a {
+    color: #2296f0;
+}
+a:visited {
+    color: #59b3f8;
+}
+
+#nav a {
+    text-decoration: none;
+}
+
+#nav a:hover {
+    background-color: #ddd;
+}
+
+h1 {
+    margin: 1em 1ex 0.5ex 0;
+    font-size: 1.4em;
+}
+
+h2 {
+    margin: 1em 1ex 0.5ex 0;
+    font-size: 1.3em;
+}
+
+h3 {
+    margin: 1em 1ex 0.5ex 0;
+    font-size: 1.0em;
+}
+
+h4 {
+    margin: 1em 1ex 0.5ex 0;
+    font-size: 0.9em;
+}
+
+
+#nav {
+    float: left;
+    margin: 0 1px 0 0;
+    padding: 1em 0;
+    border-right: 1px dotted #ccc;
+    width: 200px;
+}
+
+#nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+#nav li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li ul {
+    padding-left: 0.6em !important;
+}
+
+#nav li a {
+    display: block;
+    margin: 0;
+    padding: 0.8ex 2em 0.8ex 1em;
+}
+
+#main {
+    margin: 0 0 0 200px;
+    max-width: 50em;
+    padding: 1.5em;
+}
+
+#main ul, ol {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*padding-left: 30px;*/
+}
+
+
+/*
+     FILE ARCHIVED ON 21:22:51 Aug 26, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:09:17 Jun 24, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 8.152
+  captures_list: 0.989
+  exclusion.robots: 0.093
+  exclusion.robots.policy: 0.05
+  esindex: 0.016
+  cdx.remote: 164.222
+  LoadShardBlock: 411.707 (3)
+  PetaboxLoader3.datanode: 261.274 (4)
+  PetaboxLoader3.resolve: 261.504 (2)
+  load_resource: 131.107
+*/
