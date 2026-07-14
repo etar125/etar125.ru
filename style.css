@@ -1,5 +1,5 @@
 body {
-    background-color: #020202;
+    background-color: #121212;
     color: #fff;
     padding: 0;
     margin: 0;
@@ -13,7 +13,7 @@ code {
 }
 
 .header {
-    background-color: #101010;
+    background-color: #65A29D;
     /*background-image: url("https://etar125.ru/media/stripe_bg_logo.jpg");*/
     width: 100%;
     color: #ffffff;
@@ -73,7 +73,6 @@ code {
 }
 
 #main img {
-    float: center;
     max-width: 80%;
 }
 
@@ -107,6 +106,10 @@ a.header-link:hover {
     overflow-wrap: break-word;
     word-break: normal;
     hyphens: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
 }
 
 
@@ -182,8 +185,8 @@ input[type="checkbox"]:checked::before {
 }
 
 p {
-    line-height: 1.6;
-    font-size: 1em;
+    /*line-height: 1.6;*/
+    font-size: 1.2em;
 }
 
 p + p {
