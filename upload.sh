@@ -1,11 +1,11 @@
 #!/bin/bash
-[[ -x ".static/.ftpauto" ]] && mv .static/.ftpauto ./
-./e1sg.tcl .
-[[ -x ".ftpauto" ]] && mv .ftpauto .static/
-cp ftpauto.sh .static/
-cp .env .static/
-cd .static
+[[ -x "dst/.ftpauto" ]] && mv dst/.ftpauto ./
+ssgc src dst
+[[ -x ".ftpauto" ]] && mv .ftpauto dst/
+cp ftpauto.sh dst/
+cp .env dst/
+cd dst
 ./ftpauto.sh
 mv .ftpauto ../
 cd ..
-rm -r .static
+rm -r dst

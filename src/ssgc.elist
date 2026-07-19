@@ -1,0 +1,6 @@
+sitename: etar125.ru
+mdhandler: n1md
+template: template.html
+ignore: README.md
+oldr: {{media}}
+newr: https://etar125.ru/media
