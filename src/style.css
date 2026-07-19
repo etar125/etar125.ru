@@ -49,14 +49,11 @@ code {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #3A7EFF;
 }
 a:visited {
-    color: #3A57FF;
-}
-a:hover {
-    text-decoration: revert;
+    text-decoration: none;
 }
 
 .main a.header-link {
