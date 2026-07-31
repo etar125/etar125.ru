@@ -1,11 +1,11 @@
 #!/bin/env tclsh
 # etar125's blog generator for ssgc
-# v0.26.7_13
+# v0.26.7_31
 
 set dir [lindex $argv 0]
 set md_handler [list n1md]
 
-set version "0.26.7_13"
+set version "0.26.7_31"
 
 set blogname "Мой блог"
 set blogolink "/blog"
@@ -110,7 +110,7 @@ $line
   <description><!\[CDATA\[$fh2\]\]></description>
 </item>
 "
-    append spisok "\[$name\]($blogolink/${newroot}.html)  
+    append spisok "\[$name\]($blogolink/${newroot}.html) $date  
 "
 }
 
